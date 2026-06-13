@@ -1,0 +1,243 @@
+{
+  "$comment": "Corrected link map reconciled to the LIVE comparepropfirms.com IA (captured 2026-06-12). The agent wires nav/footer/cross-links from this. Rule: resolve to a real target or FLAG; never fallback-wire. Paths with ‹VERIFY› need confirmation against the live sitemap before shipping.",
+  "version": "1.0",
+  "url_patterns": {
+    "home": "/",
+    "firm_review": "/prop-firm/{slug}/",
+    "futures_category": "/category/best-prop-firms/{subcat}/",
+    "futures_category_root": "/category/best-prop-firms/",
+    "tier_category": "/category/{slug}/",
+    "vertical": "/category/{vertical}/",
+    "article": "/{post-slug}/",
+    "_note": "Adopt these LIVE patterns verbatim in the new build. New build's /firms/{slug}/ and flat /category/{slug}/ are WRONG and must be changed."
+  },
+  "primary_nav": [
+    {
+      "label": "Futures",
+      "target": "/category/best-prop-firms/",
+      "status": "live"
+    },
+    {
+      "label": "Crypto",
+      "target": "/category/crypto/",
+      "status": "live",
+      "was": "/compare/"
+    },
+    {
+      "label": "Options",
+      "target": "/category/options/",
+      "status": "live",
+      "was": "/compare/"
+    },
+    {
+      "label": "Forex",
+      "target": "/category/forex/",
+      "status": "live",
+      "was": "/compare/"
+    }
+  ],
+  "futures_megamenu": [
+    {
+      "label": "Best Funding Offers 2026",
+      "target": "/category/best-prop-firms/",
+      "status": "live"
+    },
+    {
+      "label": "Instant Funding Offers",
+      "target": "/category/best-prop-firms/instant-funding/",
+      "status": "live",
+      "was": "/category/instant-funding/"
+    },
+    {
+      "label": "One Step Evaluations",
+      "target": "/category/best-prop-firms/one-step-evaluation/",
+      "status": "live",
+      "was": "/category/best-prop-firms/"
+    },
+    {
+      "label": "5+ Trading Accounts",
+      "target": "/category/best-prop-firms/five-plus-trading-accounts/",
+      "status": "live"
+    },
+    {
+      "label": "100% Profit Split Offers",
+      "target": "/category/best-prop-firms/profit-split-bonus-offers/",
+      "status": "live",
+      "was": "/firms/bulenox/ (WRONG: pointed feature to a firm page)"
+    },
+    {
+      "label": "Tradovate Platform",
+      "target": "/category/best-prop-firms/tradovate/",
+      "status": "live",
+      "was": "/compare/"
+    },
+    {
+      "label": "Mid Tier Prop Firms",
+      "target": "/category/mid-tier-prop-firms/",
+      "status": "live"
+    },
+    {
+      "label": "Do Not Trade List",
+      "target": "/category/do-not-trade/",
+      "status": "live"
+    }
+  ],
+  "removed_fictional": {
+    "by_market": [
+      "E-mini (ES)",
+      "NQ (Nasdaq)",
+      "YM (Dow)",
+      "GC (Gold)",
+      "CL (Crude Oil)",
+      "View all markets"
+    ],
+    "reason": "No 'By Market' categories exist on the live site. Remove all. Do not point to /compare/."
+  },
+  "footer": {
+    "top_prop_firms": [
+      {
+        "label": "Tradeify",
+        "target": "/prop-firm/tradeify/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Apex Trader Funding",
+        "target": "/prop-firm/apex-trader-funding/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Take Profit Trader",
+        "target": "/prop-firm/take-profit-trader/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Lucid Trading",
+        "target": "/prop-firm/lucid-trading/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Topstep",
+        "target": "/prop-firm/topstep/",
+        "status": "confirmed"
+      },
+      {
+        "label": "View all firms",
+        "target": "/category/best-prop-firms/",
+        "status": "live"
+      }
+    ],
+    "resources": [
+      {
+        "label": "Reviews",
+        "target": "/category/best-prop-firms/",
+        "status": "live"
+      },
+      {
+        "label": "Guides",
+        "target": "/articles/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Payout Rules",
+        "target": "/prop-firm-payout-guide-2026-how-when-how-much-you-actually-get-paid/",
+        "status": "confirmed_post_or_FLAG"
+      },
+      {
+        "label": "Scaling Plans",
+        "target": null,
+        "status": "FLAG_no_destination"
+      },
+      {
+        "label": "News Hub",
+        "target": "/category/best-prop-firms/trade-news/",
+        "status": "confirmed_category_or_articles"
+      },
+      {
+        "label": "Compare Firms",
+        "target": null,
+        "status": "FLAG_see_compare_decision"
+      }
+    ],
+    "support": [
+      {
+        "label": "About Us",
+        "target": "/about-us/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Email",
+        "target": "mailto:support@comparepropfirms.com",
+        "status": "confirmed"
+      }
+    ],
+    "social": {
+      "status": "VERIFY",
+      "rule": "Use real profile URLs; if none, remove the icon. Never ship '#'."
+    },
+    "legal": [
+      {
+        "label": "Privacy Policy",
+        "target": "/privacy-policy/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Terms & Conditions",
+        "target": "/terms-and-conditions/",
+        "status": "confirmed"
+      },
+      {
+        "label": "Sitemap",
+        "target": "/sitemap_index.xml",
+        "status": "confirmed"
+      }
+    ],
+    "copyright": "© 2026 Compare Prop Firms. All rights reserved."
+  },
+  "compare_page_decision": {
+    "status": "UNDECIDED",
+    "options": [
+      "remove all /compare/ links; point compare intents to /category/best-prop-firms/",
+      "build a real /compare/ two-firm tool from CMP_DATA, then link it"
+    ],
+    "rule": "Until the page exists and passes audit, no link may point to /compare/."
+  },
+  "title_format": "{subject} — ComparePropFirms.com",
+  "link_gate": {
+    "fail_on": [
+      "href=\"#\"",
+      "path not in this map and not a /prop-firm/ or /category/ pattern match",
+      "any /compare/ link while compare_page_decision.status != built",
+      "any By Market / fictional category",
+      "any unresolved ‹VERIFY› or ‹FLAG› that was shipped as a fallback"
+    ]
+  },
+  "resolved_2026_06_12": {
+    "about": "/about-us/",
+    "faq": "/faq/",
+    "articles": "/articles/",
+    "terms": "/terms-and-conditions/",
+    "privacy": "/privacy-policy/",
+    "news_options": [
+      "/category/best-prop-firms/trade-news/",
+      "/articles/"
+    ],
+    "compare": "no /compare/ page exists; comparison article at /tradeify-vs-apex-trader-funding-vs-topstep-head-to-head-comparison-2026/",
+    "all_product_categories": [
+      "/category/best-prop-firms/",
+      "/category/best-prop-firms/best/",
+      "/category/best-prop-firms/instant-funding/",
+      "/category/best-prop-firms/one-step-evaluation/",
+      "/category/best-prop-firms/five-plus-trading-accounts/",
+      "/category/best-prop-firms/profit-split-bonus-offers/",
+      "/category/best-prop-firms/no-evaluation-funding-fee/",
+      "/category/best-prop-firms/live-trading-path/",
+      "/category/best-prop-firms/trade-news/",
+      "/category/best-prop-firms/tradovate/",
+      "/category/mid-tier-prop-firms/",
+      "/category/do-not-trade/",
+      "/category/crypto/",
+      "/category/options/",
+      "/category/forex/"
+    ]
+  }
+}

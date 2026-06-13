@@ -1,0 +1,131 @@
+{
+  "$comment": "Machine-readable companion to cpf-build-spec.md. The spec is authoritative prose; this drives the build. Do not invent values marked VERIFY.",
+  "version": "1.0",
+  "host": "comparepropfirms.com",
+  "host_verify": "Confirm apex vs www, pick one canonical host, 301 the other globally.",
+  "title_format": "{subject} \u2014 ComparePropFirms.com",
+
+  "assets": {
+    "load_order_css": ["/assets/cpf-base.css", "/assets/cpf-chrome.css", "page-inline-style"],
+    "load_order_js": ["/assets/cpf-chrome.js", "page-inline-script"],
+    "base_css": "cpf-base.css",
+    "chrome_css": "cpf-chrome.css",
+    "chrome_js": "cpf-chrome.js",
+    "header_partial": "cpf-chrome-header.html",
+    "footer_partial": "cpf-chrome-footer.html"
+  },
+
+  "head_contract": {
+    "theme_bootstrap_inline": "<script>(function(){try{if(localStorage.getItem('cpf-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();</script>",
+    "theme_bootstrap_rule": "Inline in <head>, pre-paint, NEVER externalize.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&display=swap",
+    "required_meta": ["charset UTF-8", "viewport", "color-scheme light dark", "title", "description", "canonical (self, absolute)", "og:*", "twitter:*"]
+  },
+
+  "id_contract": {
+    "header_root": "siteNav",
+    "theme_toggle": "themeToggle",
+    "mega_menu": "futuresDD",
+    "mega_menu_trigger": "futuresTrigger",
+    "mega_menu_mobile_sub": "mFuturesSub",
+    "footer_disclosure_wrap": "footDisc",
+    "footer_disclosure_btn": "discToggle",
+    "footer_disclosure_panel": "discPanel",
+    "mobile_drawer": "mobileNav",
+    "mobile_drawer_overlay": "mobileNavOverlay",
+    "mobile_drawer_close": "mobileNavClose",
+    "forbidden_ids": ["theme-toggle"],
+    "forbidden_note": "theme-toggle is the legacy hyphenated id. Purge from all page bodies; the injected header owns the toggle."
+  },
+
+  "known_gaps": [
+    {"id": "G1", "issue": "Three headers in source (canonical chrome, drifted template inline, legacy firm <nav class='nav'>).", "action": "Keep cpf-chrome-header.html only; delete the other two everywhere."},
+    {"id": "G2", "issue": "Two toggle ids (themeToggle vs theme-toggle).", "action": "Standardize on themeToggle; delete theme-toggle and inline toggle handlers."},
+    {"id": "G3", "issue": "cpf-chrome.js does NOT bind the mobile drawer (mobileNav/Overlay/Close); handler only lives inline in templates (~homepage L1331).", "action": "Lift the drawer open/close handler into cpf-chrome.js once; confirm hamburger opener id in header; remove inline drawer JS from page bodies."},
+    {"id": "G4", "issue": "Homepage inline header missing the 66-line mobile drawer block (drift).", "action": "Moot after canonical injection; never trust inline chrome copies."},
+    {"id": "G5", "issue": "Placeholder href='#' in header/footer including social icons.", "action": "Resolve all via link_map; ship zero href='#'."}
+  ],
+
+  "pages": [
+    {"file": "cpf-tradeify.html", "type": "firm", "pattern": "eval+instant", "role": "CORNERSTONE", "path": "/firms/tradeify/", "body_wrapper": "legacy <nav> then content", "apply_data_module": true},
+    {"file": "cpf-alpha-futures.html", "type": "firm", "pattern": "eval-only", "role": "CORNERSTONE", "path": "/firms/alpha-futures/", "apply_data_module": true},
+    {"file": "cpf-category-best-prop-firms-desktop-v2.html", "type": "category", "path": "/best-futures-prop-firms/", "body_wrapper": "<main class=\"pf-list\">", "note": "Converge desktop + Cloudflare mobile variant into one responsive page under canonical chrome."},
+    {"file": "cpf-homepage.html", "type": "homepage", "path": "/", "note": "Replace drifted inline chrome with canonical injection."},
+    {"file": "cpf-article.html", "type": "article", "path": "/{article-slug}/"},
+    {"file": "cpf-news-hub.html", "type": "news", "path": "/news/"},
+    {"file": "cpf-about.html", "type": "about", "path": "/about/"},
+    {"file": "cpf-legal.html", "type": "legal", "path": "/legal/{slug}/"},
+    {"file": "cpf-header-footer.html", "type": "reference", "path": null, "deploy": false, "note": "Demo bundle; cross-check only, never deploy."}
+  ],
+
+  "page_transform": {
+    "all": [
+      "Build the §3 skeleton.",
+      "Inject cpf-chrome-header.html at top of <body>.",
+      "Wrap page body in <main>.",
+      "Inject cpf-chrome-footer.html before scripts.",
+      "Externalize base/chrome CSS+JS per load order.",
+      "Delete legacy <nav class='nav'>, inline header/footer copies, theme-toggle ids, inline toggle/drawer handlers.",
+      "Wire every link via link_map; set per-page meta + self canonical.",
+      "Run validation chain."
+    ],
+    "firm_extra": ["Apply data accuracy module (§7).", "Keep firm-specific <style>/<script> (tabs, builders, CMP_DATA).", "Per-product accent from existing palette tokens only; never recolor --orange."]
+  },
+
+  "data_module": {
+    "first_party_only": true,
+    "verify_token": "\u2039VERIFY\u203a",
+    "verify_rule": "Unconfirmed fields keep the literal token in the content map and are suppressed from rendered output (render '\u2014' or nothing).",
+    "row_schema": {
+      "accounts_evaluation_rows": 12,
+      "accounts_funded_rows": 12,
+      "payouts_rows_min": 11,
+      "payouts_rows_max": 14,
+      "funded_buttons": ["Account Size", "Price"],
+      "max_payout": "dedicated row, never a button label"
+    },
+    "builders": ["acRows()", "payRows()"],
+    "builder_rule": "Copy verbatim across firms; never hand-write rows.",
+    "slot_keys": {"products": ["growth", "select", "lightning"], "phases": ["eval", "funded"], "rule": "Internal slot keys are immutable; map public labels to them in the content map."},
+    "single_source": {"object": "CMP_DATA", "rule": "Comparison view and Payouts tab read the same object. Scope rerenderAllAccountCards() to #view-comparison."}
+  },
+
+  "link_map": {
+    "_rule": "Resolve every href='#'. For firms already on WordPress, new path MUST equal the existing live URL (pull from current sitemap) so SEO carries over with no redirect.",
+    "home": "/",
+    "firm": "/firms/{slug}/",
+    "category_best": "/best-futures-prop-firms/",
+    "compare": "/compare/",
+    "reviews": "/reviews/",
+    "guides": "/guides/",
+    "news": "/news/",
+    "about": "/about/",
+    "legal_privacy": "/legal/privacy/",
+    "legal_terms": "/legal/terms/",
+    "sitemap": "/legal/sitemap/",
+    "support_email": "mailto:support@comparepropfirms.com",
+    "footer_top_firms": {"Tradeify": "/firms/tradeify/", "Apex Trader Funding": "/firms/{slug}/", "Take Profit Trader": "/firms/{slug}/", "Lucid Trading": "/firms/{slug}/", "Topstep": "/firms/{slug}/", "_slugs_verify": true},
+    "social": {"_verify": "Use real profile URLs; if none, remove the icon rather than ship '#'."}
+  },
+
+  "validation": {
+    "working_dir": "/home/claude/work/",
+    "deploy_dir": "‹deploy target›",
+    "edit_helper": "rep(old, new, expected_count) — assert exact count before replace; fail = write nothing.",
+    "per_page_gates": [
+      "node --check each <script> block (firm pages: expect 3/3 clean)",
+      "Playwright headless Chromium @1200-1400px and @390px, zero console errors",
+      "chrome parity: header+footer byte-identical to canonical partials (normalized ws)",
+      "id contract: 0 theme-toggle; exactly one siteNav/themeToggle/footDisc; drawer ids present",
+      "links: 0 href='#'; all internal links resolve; canonical self-referential absolute",
+      "canonicalization lint: every comparable value matches cpf-canonical-phrases.json; no \u2039VERIFY\u203a rendered",
+      "asset order: base \u2192 chrome \u2192 page css; chrome.js before page js"
+    ],
+    "site_gates": [
+      "Shared values render identical strings across firms (cross-page diff)",
+      "Each URL served from exactly one place (new build XOR WordPress)",
+      "sitemap.xml lists only canonical URLs"
+    ],
+    "deliver": "present_files only after all gates pass"
+  }
+}

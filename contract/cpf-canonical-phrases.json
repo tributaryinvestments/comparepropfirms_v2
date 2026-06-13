@@ -1,0 +1,89 @@
+{
+  "$comment": "Exact-match wording dictionary. PURPOSE: when two firms share a value, the STRING must be identical so comparison is clean ('5 trading days', never '5 days'). Seeded with format rules + tokens VERIFIED first-party from the Tradeify content map. This bank GROWS, never forks: when a firm uses a shared value not listed, add its canonical string here so the next firm renders identically. Per-firm numbers are NOT in this file \u2014 the agent pulls those first-party; this file governs the WORDING/FORMAT of values, not which firm has which.",
+  "version": "1.0",
+
+  "format_rules": {
+    "durations": {
+      "pattern": "{n} {unit}",
+      "units": ["day", "trading days", "winning days", "calendar days"],
+      "rules": [
+        "Never write bare 'days' when a qualifier applies. Use the firm's first-party qualifier exactly: a payout requiring 5 trading days is '5 trading days', a 5-winning-day cycle is '5 winning days'.",
+        "Singular 1 \u2192 '1 day' / '1 trading day'. Plural otherwise.",
+        "Ranges use an en-dash with no spaces: '1\u20135'."
+      ],
+      "verified_examples": ["1 day", "3 trading days", "5 winning days", "5 trading days", "1\u20135"]
+    },
+    "currency": {
+      "pattern": "$#,###",
+      "rules": ["Whole dollars, comma thousands, no decimals unless the firm publishes cents.", "Account sizes shown as e.g. '$50K' in buttons, '$50,000' in rows \u2014 match the cornerstone's existing convention per surface."]
+    },
+    "percent": {"pattern": "{n}%", "rules": ["No space before %.", "If a rule is absent, write the canonical absence string (see absence_strings), not '0%'."]},
+    "time_window": {"pattern": "{h}\u2013{h} {AMPM} {TZ}", "verified_examples": ["6\u20138 PM ET"], "rules": ["Timezone always abbreviated (ET), space before it."]}
+  },
+
+  "canonical_tokens": {
+    "_note": "Reuse these EXACT strings wherever the concept appears, for any firm that shares it. Verified from Tradeify first-party help center.",
+    "drawdown_types": {
+      "eod_trailing": "EOD trailing",
+      "intraday_trailing": "Intraday trailing \u2039VERIFY per firm\u203a",
+      "static_eod": "Static (EOD) \u2039VERIFY per firm\u203a",
+      "rule": "Use the firm's published mechanic; map to one of these canonical labels. Detail/nuance lives on the Rules tab, not the comparison row."
+    },
+    "consistency": {
+      "none": "No consistency rule",
+      "eval_example": "40% eval consistency",
+      "funded_example": "35% funded consistency",
+      "progressive_example": "Progressive (20% \u2192 25% \u2192 30%)",
+      "rule": "State scope (eval vs funded) explicitly; never an ambiguous bare '40%'."
+    },
+    "payout_methods": {
+      "_verified_tradeify": ["Rise Pay", "Plane"],
+      "rule": "Method names are proper nouns \u2014 match the firm's exact spelling/casing; add new methods here as encountered."
+    },
+    "phases": {"evaluation": "Evaluation", "funded": "Funded", "instant": "Instant funding", "rule": "Public phase labels; internal slot keys stay eval/funded/lightning per the build spec."}
+  },
+
+  "absence_strings": {
+    "_rule": "When a firm genuinely does not have a feature, use these exact strings \u2014 never blank, never '0', never 'N/A' (inconsistent).",
+    "no_rule": "None",
+    "not_applicable": "\u2014",
+    "no_reset": "No resets",
+    "no_drawdown_lock": "No daily loss limit"
+  },
+
+  "row_schema": {
+    "_comment": "Mirrors cpf-site-manifest.json data_module.row_schema. Single source for both.",
+    "accounts_tab": {
+      "evaluation_toggle_rows": 12,
+      "funded_toggle_rows": 12,
+      "funded_buttons": ["Account Size", "Price"],
+      "max_payout": "dedicated row (never a button label)"
+    },
+    "payouts_tab": {"rows_min": 11, "rows_max": 14, "default": 11},
+    "builders": ["acRows()", "payRows()"]
+  },
+
+  "comparison_fields": {
+    "_comment": "The canonical set of comparable fields. Each firm fills these from first-party data, formatted per format_rules + canonical_tokens. Field LABELS are fixed (identical across firms); only VALUES change.",
+    "fields": [
+      "Account sizes",
+      "Price",
+      "Profit target",
+      "Total drawdown",
+      "Drawdown type",
+      "Daily loss limit",
+      "Min trading days (eval)",
+      "Eval consistency",
+      "Min payout",
+      "Max payout",
+      "Days to first payout",
+      "Payout frequency",
+      "Funded consistency",
+      "Payout methods",
+      "Activation/reset fee",
+      "Platforms",
+      "Restricted countries"
+    ],
+    "label_rule": "These labels are identical on every firm page and the category list. Do not rephrase per firm ('Min payout days' vs 'Minimum payout days' is a defect)."
+  }
+}

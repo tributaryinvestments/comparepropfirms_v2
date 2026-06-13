@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://comparepropfirms.com/contract/cpf-firm-data.schema.json",
+  "title": "ComparePropFirms firm-data contract",
+  "description": "Per-firm CMP_DATA shape. Required keys mirror the cornerstone renderer. Enforced at runtime by seed-check.mjs.",
+  "type": "object",
+  "required": [
+    "meta",
+    "account_data",
+    "payout_data",
+    "phase_labels"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "name",
+        "slug",
+        "url",
+        "pattern",
+        "sizes",
+        "products"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^/prop-firm/[a-z0-9-]+/$"
+        },
+        "pattern": {
+          "enum": [
+            "eval-only",
+            "eval+instant"
+          ]
+        },
+        "accent": {
+          "type": "string"
+        },
+        "sizes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "products": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "slot",
+              "label"
+            ],
+            "properties": {
+              "slot": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "account_data": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "eval",
+          "funded"
+        ],
+        "properties": {
+          "eval": {
+            "type": "object",
+            "required": [
+              "fixed",
+              "sizes"
+            ],
+            "properties": {
+              "fixed": {
+                "type": "object",
+                "required": [
+                  "evalSteps",
+                  "consistency",
+                  "daysToPass",
+                  "maxAccounts",
+                  "resets",
+                  "news",
+                  "bots"
+                ],
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "sizes": {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "target",
+                    "drawdown",
+                    "dailyLoss",
+                    "maxContracts"
+                  ],
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "funded": {
+            "type": "object",
+            "required": [
+              "fixed",
+              "sizes"
+            ],
+            "properties": {
+              "fixed": {
+                "type": "object",
+                "required": [
+                  "target",
+                  "daysToPayout",
+                  "consistency",
+                  "scaling",
+                  "maxAccounts",
+                  "resets",
+                  "split",
+                  "news",
+                  "bots"
+                ],
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "sizes": {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "maxPayout",
+                    "drawdown",
+                    "dailyLoss"
+                  ],
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "payout_data": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "fixed",
+          "sizes"
+        ],
+        "properties": {
+          "fixed": {
+            "type": "object",
+            "required": [
+              "minPayout",
+              "target",
+              "buffer",
+              "days",
+              "perDay",
+              "consistency",
+              "split"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "sizes": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "maxPayout",
+                "maxPayoutSub",
+                "drawdown",
+                "dailyLoss"
+              ],
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "card_data": {
+      "type": "object"
+    },
+    "phase_labels": {
+      "type": "object",
+      "required": [
+        "eval",
+        "funded"
+      ],
+      "properties": {
+        "eval": {
+          "type": "object",
+          "required": [
+            "consistency"
+          ]
+        },
+        "funded": {
+          "type": "object",
+          "required": [
+            "consistency"
+          ]
+        }
+      }
+    },
+    "tab_content": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "name": "Take Profit Trader",
+    "slug": "take-profit-trader",
+    "url": "/prop-firm/take-profit-trader/",
+    "pattern": "eval-only",
+    "accent": "--green",
+    "accent_note": "‹VERIFY brand accent — pick from existing palette tokens only›",
+    "sizes": ["25K", "50K", "75K", "100K", "150K"],
+    "sizes_note": "Range $25K–$150K confirmed first-party; exact ladder incl. 75K ‹VERIFY›",
+    "products": [{ "slot": "pro", "label": "Pro Account" }],
+    "platforms": ["Tradovate", "TradingView", "NinjaTrader"],
+    "instruments": "Futures",
+    "promo": "30% off all evaluations for life · no activation fee",
+    "source": { "wp": "/prop-firm/take-profit-trader/", "helpCenter": "‹VERIFY URL›", "pulled": "2026-06-12" }
+  },
+
+  "account_data": {
+    "pro": {
+      "eval": {
+        "fixed": {
+          "evalSteps": "1 Step",
+          "consistency": "None",
+          "daysToPass": "‹VERIFY›",
+          "maxAccounts": "Up to 5",
+          "resets": "‹VERIFY›",
+          "activation": "None",
+          "news": "No",
+          "bots": "‹VERIFY›"
+        },
+        "sizes": {
+          "25K":  { "target": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›", "maxContracts": "‹VERIFY›" },
+          "50K":  { "target": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›", "maxContracts": "‹VERIFY›" },
+          "75K":  { "target": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›", "maxContracts": "‹VERIFY›" },
+          "100K": { "target": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›", "maxContracts": "‹VERIFY›" },
+          "150K": { "target": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›", "maxContracts": "‹VERIFY›" }
+        }
+      },
+      "funded": {
+        "fixed": {
+          "target": "No Target",
+          "daysToPayout": "‹VERIFY›",
+          "consistency": "‹VERIFY›",
+          "scaling": "‹VERIFY›",
+          "maxAccounts": "Up to 5",
+          "resets": "‹VERIFY›",
+          "split": "80% / 20%",
+          "split_note": "Pro funded = 80/20; upgrades to 90/10 at Pro+ live account (confirmed first-party)",
+          "news": "No",
+          "bots": "‹VERIFY›"
+        },
+        "sizes": {
+          "25K":  { "maxPayout": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+          "50K":  { "maxPayout": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+          "75K":  { "maxPayout": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+          "100K": { "maxPayout": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+          "150K": { "maxPayout": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" }
+        }
+      }
+    }
+  },
+
+  "payout_data": {
+    "pro": {
+      "fixed": {
+        "minPayout": "‹VERIFY›",
+        "target": "No Target",
+        "buffer": "‹VERIFY›",
+        "days": "‹VERIFY›",
+        "perDay": "‹VERIFY›",
+        "consistency": "‹VERIFY›",
+        "split": "80% / 20%"
+      },
+      "sizes": {
+        "25K":  { "maxPayout": "‹VERIFY›", "maxPayoutSub": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+        "50K":  { "maxPayout": "‹VERIFY›", "maxPayoutSub": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+        "75K":  { "maxPayout": "‹VERIFY›", "maxPayoutSub": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+        "100K": { "maxPayout": "‹VERIFY›", "maxPayoutSub": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" },
+        "150K": { "maxPayout": "‹VERIFY›", "maxPayoutSub": "‹VERIFY›", "drawdown": "‹VERIFY›", "dailyLoss": "‹VERIFY›" }
+      }
+    }
+  },
+
+  "card_data": {
+    "pro": {
+      "icon": "⚡",
+      "name": "Pro Account",
+      "tag": "Fast Payouts",
+      "tagClass": "growth",
+      "sub": "1-Step Evaluation • Tradovate • Fast & frequent payouts",
+      "split": "80%",
+      "splitFull": "80% / 20%",
+      "targetSub": "Single Step",
+      "payoutsTop": "‹VERIFY›",
+      "minDays": "‹VERIFY›",
+      "evalMinDays": "‹VERIFY›",
+      "fundedMinDays": "‹VERIFY›",
+      "consistencyEval": "None (eval)",
+      "consistencyFunded": "‹VERIFY›",
+      "instruments": "Futures",
+      "firstPayout": "‹VERIFY›",
+      "subsequent": "‹VERIFY›",
+      "frequency": "‹VERIFY›",
+      "accountReset": "‹VERIFY›",
+      "about": "Take Profit Trader runs a one-step evaluation on a Pro account: hit the profit target before your drawdown while avoiding the daily loss limit and news trading. Funded Pro accounts pay an 80/20 split with fast, frequent payouts; reaching a Pro+ live account upgrades the split to 90/10. Trade up to 5 accounts from $25,000 to $150,000 (up to $750,000 in capital) on Tradovate, with TradingView and NinjaTrader supported.",
+      "features": ["No activation fee (promo)", "Fast & frequent payouts", "Up to 5 accounts / $750K capital", "Tradovate + TradingView + NinjaTrader"],
+      "bestFor": ["‹VERIFY›"],
+      "notIdeal": ["‹VERIFY›"],
+      "ctaText": "Pass the one-step evaluation to reach a funded <strong>Pro account</strong>, then a Pro+ live account at a 90/10 split.",
+      "sizes": {}
+    }
+  },
+
+  "phase_labels": {
+    "eval":   { "consistency": "Consistency (Eval)" },
+    "funded": { "consistency": "Consistency (Funded)" }
+  },
+
+  "tab_content": {
+    "rules": "Hit your profit target before reaching your drawdown. Avoid news trading and do not breach your daily loss limit. ‹VERIFY exact max-loss mechanic (trailing vs EOD vs static), daily-loss values, and any minimum trading days against the TPT help center.›",
+    "faq": [{ "q": "‹VERIFY›", "a": "‹VERIFY›" }],
+    "restricted": ["‹VERIFY restricted countries against TPT help center›"]
+  }
+}
