@@ -864,7 +864,7 @@
     <div class="pf-filters" id="filters">
       <button class="filter-pill" data-filter="eval">Evaluations</button>
       <button class="filter-pill" data-filter="instant">Instant Funding</button>
-      <button class="filter-pill" data-filter="fiveplus">5+ Accounts</button>
+      <button class="filter-pill active" data-filter="fiveplus">5+ Accounts</button>
       <button class="filter-pill" data-filter="split100">Profit Split</button>
       <button class="filter-pill" data-filter="news">Trade News</button>
       <button class="filter-pill" data-filter="midtier">Mid Tier</button>
@@ -949,12 +949,12 @@
     <div class="foot-col">
       <div class="foot-col-title">Top Prop Firms</div>
       <ul class="foot-links">
-        <li><a href="#">Tradeify</a></li>
-        <li><a href="#">Apex Trader Funding</a></li>
-        <li><a href="#">Take Profit Trader</a></li>
-        <li><a href="#">Lucid Trading</a></li>
-        <li><a href="#">Topstep</a></li>
-        <li><a class="foot-viewall" href="#">View all firms →</a></li>
+        <li><a href="/prop-firm/tradeify/">Tradeify</a></li>
+        <li><a href="/prop-firm/alpha-futures/">Alpha Futures</a></li>
+        <li><a href="/prop-firm/take-profit-trader/">Take Profit Trader</a></li>
+        <li><a href="/prop-firm/lucid-trading/">Lucid Trading</a></li>
+        <li><a href="/prop-firm/topstep/">Topstep</a></li>
+        <li><a class="foot-viewall" href="/category/best-prop-firms/">View all firms →</a></li>
       </ul>
     </div>
 
@@ -962,12 +962,11 @@
     <div class="foot-col">
       <div class="foot-col-title">Resources</div>
       <ul class="foot-links">
-        <li><a href="#">Reviews</a></li>
-        <li><a href="#">Guides</a></li>
-        <li><a href="#">Payout Rules</a></li>
-        <li><a href="#">Scaling Plans</a></li>
-        <li><a href="#">News Hub</a></li>
-        <li><a href="#">Compare Firms</a></li>
+        <li><a href="/category/best-prop-firms/instant-funding/">Instant Funding</a></li>
+        <li><a href="/category/best-prop-firms/five-plus-trading-accounts/">5+ Trading Accounts</a></li>
+        <li><a href="/how-to-pass-a-prop-firm-evaluation-10-proven-strategies-2026/">How to Pass an Evaluation</a></li>
+        <li><a href="/articles/">News Hub</a></li>
+        <li><a href="/category/best-prop-firms/">Compare All Firms</a></li>
       </ul>
     </div>
 
@@ -982,7 +981,7 @@
       <div class="foot-support">
         <div class="foot-col-title">Support</div>
         <ul class="foot-links">
-          <li><a href="#">About Us</a></li>
+          <li><a href="/about-us/">About Us</a></li>
           <li><a class="foot-email" href="mailto:support@comparepropfirms.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>support@comparepropfirms.com</a></li>
         </ul>
       </div>
@@ -1032,9 +1031,8 @@
     <div class="foot-bottom-inner">
       <div class="foot-copy">© 2026 Compare Prop Firms. All rights reserved.</div>
       <nav class="foot-legal" aria-label="Legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Sitemap</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
       </nav>
     </div>
   </div>
@@ -1939,7 +1937,7 @@ document.querySelectorAll('#detail-seg .seg-btn').forEach(b=>{
 });
 
 /* ----- filters (pills act as navigation; click an active pill to clear) ----- */
-let activeFilter='all';
+let activeFilter='fiveplus';
 const NAV_ONLY = ['midtier','donottrade']; // separate category pages on the live site
 document.querySelectorAll('.filter-pill').forEach(p=>{
   p.addEventListener('click', ()=>{
