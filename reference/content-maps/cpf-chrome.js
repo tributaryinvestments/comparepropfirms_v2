@@ -48,32 +48,3 @@
     document.addEventListener('click', function(e){ if(!dd.contains(e.target)) close(); });
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
   })();
-
-  // Mobile nav drawer + Futures accordion
-  (function(){
-    var burger  = document.getElementById('mobileBurger') || document.querySelector('.mobile-burger');
-    var drawer  = document.getElementById('mobileNav');
-    var overlay = document.getElementById('mobileNavOverlay');
-    var closeB  = document.getElementById('mobileNavClose');
-    if(!burger || !drawer || !overlay) return;
-    function open(){
-      drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
-      overlay.hidden = false; requestAnimationFrame(function(){ overlay.classList.add('open'); });
-      document.body.style.overflow = 'hidden';
-    }
-    function close(){
-      drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true');
-      overlay.classList.remove('open'); setTimeout(function(){ overlay.hidden = true; }, 300);
-      document.body.style.overflow = '';
-    }
-    burger.addEventListener('click', open);
-    if(closeB) closeB.addEventListener('click', close);
-    overlay.addEventListener('click', close);
-    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && drawer.classList.contains('open')) close(); });
-    var trig = drawer.querySelector('.m-acc-trigger');
-    var acc  = trig ? trig.closest('.m-acc') : null;
-    if(trig && acc){ trig.addEventListener('click', function(){
-      var isOpen = acc.classList.toggle('open');
-      trig.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }); }
-  })();
