@@ -1,0 +1,40 @@
+/* cpf-base.css — design tokens + base resets (the foundation the chrome depends on).
+   Load this ONCE globally, before cpf-chrome.css and any page CSS.
+   Source of truth: extracted verbatim from the cornerstone system. Do not fork per page. */
+
+  /* ===== DESIGN TOKENS — verbatim from cornerstone ===== */
+  :root {
+    --sans: "Inter", system-ui, sans-serif;
+    --serif: "Source Serif 4", Georgia, serif;
+    --orange: #F39200; --orange-hover: #d97e00; --orange-soft: #fff8eb; --orange-tint: #fde6d7; --orange-deep: #b9531a;
+    --green: #2e8654; --green-soft: #d8ecdf; --green-check: #16a34a; --green-bg: #ecfdf5;
+    --red: #dc2626; --red-soft: #fef2f2;
+    --gray-50: #fafbfc; --gray-100: #f1f3f6; --gray-150: #e9ecef; --gray-200: #dee1e6;
+    --gray-300: #c9cdd3; --gray-500: #6b7280; --gray-700: #374151; --gray-900: #111827;
+    --text: #1a1a1a; --border: #e5e7eb; --bg-page: #f4f5f8; --bg-soft: #f8f9fb; --star: #facc15;
+    --blue: #2554c7; --blue-dark: #1d3f99; --blue-soft: #eef2ff;
+    --purple: #7c3aed; --purple-soft: #f3e8ff; --teal: #0e7490; --teal-soft: #ecfeff;
+    --surface: #ffffff; --surface-2: #ffffff;
+    --ink: #11243d; --ink-soft: #1c3a5e;
+  }
+  html.dark {
+    color-scheme: dark;
+    --orange: #ff9f2e; --orange-hover: #ffb152; --orange-soft: rgba(243,146,0,.15); --orange-tint: rgba(243,146,0,.26); --orange-deep: #ffbd86;
+    --green: #34d399; --green-soft: rgba(52,211,153,.16); --green-check: #34d399; --green-bg: rgba(52,211,153,.12);
+    --red: #f87171; --red-soft: rgba(248,113,113,.13);
+    --gray-50: #161d30; --gray-100: #1b2338; --gray-150: #232d44; --gray-200: #2a3450;
+    --gray-300: #46527a; --gray-500: #93a1c0; --gray-700: #c4cee0; --gray-900: #eef2fa;
+    --text: #e8edf6; --border: #28324c; --bg-page: #0b1120; --bg-soft: #161d30; --star: #facc15;
+    --blue: #6ea0ff; --blue-dark: #9bbcff; --blue-soft: rgba(110,160,255,.15);
+    --purple: #b794ff; --purple-soft: rgba(183,148,255,.18); --teal: #5eead4; --teal-soft: rgba(45,212,191,.16);
+    --surface: #141b2d; --surface-2: #1a2236;
+    --ink: #0e1b2e; --ink-soft: #18324f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; color-scheme: light; background: #f4f5f8; background: var(--bg-page); }
+  body { font-family: var(--sans); color: var(--text); background: var(--surface); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
