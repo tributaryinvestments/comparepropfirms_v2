@@ -713,6 +713,8 @@
     .ex-foot-actions { width: 100%; }
     .ex-foot-actions .btn-primary, .ex-foot-actions .btn-secondary { flex: 1; }
   }
+  .firm-logo.logo-img{background:#fff;padding:7px;}
+  .firm-logo.logo-img img{width:100%;height:100%;object-fit:contain;display:block;}
 </style>
 </head>
 <body>
@@ -1668,7 +1670,7 @@ function firmHTML(f){
 
       <div class="firm-brand">
         <div class="firm-logo-wrap">
-          <div class="firm-logo" style="background:${f.grad}">${f.logo}</div>
+          <div class="firm-logo logo-img"><img src="/cpf-logos/${f.link.replace('/prop-firm/','').replace(/\/$/,'')}-logo.png" alt="${f.name} logo"></div>
           ${f.ribbon?`<span class="firm-logo-ribbon">${f.ribbon}</span>`:''}
           <span class="firm-logo-rank">${f.rank}</span>
         </div>
