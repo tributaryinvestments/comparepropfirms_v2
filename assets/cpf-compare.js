@@ -382,7 +382,7 @@ const AFF = {
   purdia:"https://purdia.com/?i=blackcatholdings",
   alpha:"https://app.alpha-futures.com/signup/Jered016805/",
   topstep:"https://www.topstep.com/",
-  fundednext:"https://fundednext.com/futures?ref=cpf",
+  fundednext:"https://fundednext.com/futures/?fpr=jered18",
   bulenox:"https://bulenox.com/member/aff/go/jeredklima",
   daytraders:"https://daytraders.com/go/blackcatholdings?c=WODWQBSZ",
   ffn:"https://www.fundedfuturesnetwork.com/?via=CPF",
