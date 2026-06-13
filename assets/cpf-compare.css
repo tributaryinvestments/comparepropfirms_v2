@@ -1,0 +1,60 @@
+/* ComparePropFirms.com — comparison feature styles (tray + overlay modal + full-page). Shared. */
+.compare-tray { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; transform: translateY(110%); transition: transform .3s cubic-bezier(.4,0,.2,1); background: var(--surface); border-top: 1px solid var(--border); box-shadow: 0 -6px 30px rgba(17,24,39,.14); }
+.compare-tray.show { transform: translateY(0); }
+.compare-inner { max-width: 1440px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+.compare-label { font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.compare-label .badge { background: var(--blue); color: #fff; border-radius: 99px; font-size: 12px; padding: 2px 9px; }
+.compare-slots { display: flex; gap: 10px; flex: 1; overflow-x: auto; }
+.compare-slot { display: flex; align-items: center; gap: 9px; flex: 0 0 auto; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 7px 10px 7px 8px; font-size: 13px; font-weight: 700; }
+.compare-slot .mini-logo { width: 26px; height: 26px; border-radius: 7px; background: #fff; border: 1px solid var(--border); padding: 3px; overflow: hidden; display: grid; place-items: center; }
+.compare-slot .mini-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.compare-slot .remove { cursor: pointer; color: var(--gray-500); font-weight: 800; padding: 0 2px; }
+.compare-slot .remove:hover { color: var(--red); }
+.compare-actions { display: flex; gap: 10px; align-items: center; white-space: nowrap; }
+.compare-clear { background: none; border: none; cursor: pointer; font-size: 13px; font-weight: 700; color: var(--gray-500); }
+.compare-clear:hover { color: var(--text); }
+.compare-go { background: var(--blue); color: #fff; border: none; border-radius: 10px; padding: 12px 22px; font-family: var(--sans); font-weight: 800; font-size: 14px; cursor: pointer; }
+.compare-go:disabled { opacity: .45; cursor: not-allowed; }
+
+.cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.cmp-table th, .cmp-table td { padding: 13px 14px; text-align: center; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-metric { text-align: left; font-weight: 700; color: var(--gray-700); background: var(--bg-soft); white-space: nowrap; }
+.cmp-table thead th { background: var(--bg-soft); vertical-align: top; border-bottom: 2px solid var(--border); }
+.cmp-firm-logo { width: 46px; height: 46px; border-radius: 10px; background: #fff; border: 1px solid var(--border); padding: 5px; overflow: hidden; margin: 0 auto 8px; display: grid; place-items: center; }
+.cmp-firm-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cmp-firm-name { font-family: var(--serif); font-size: 16px; font-weight: 800; }
+.cmp-firm-stars { color: var(--star); font-size: 12px; letter-spacing: 1px; }
+.cmp-firm-score { font-size: 12px; font-weight: 700; color: var(--gray-500); }
+.cmp-table td.is-firm { font-weight: 700; }
+.cmp-group-cell { text-align: left; font-family: var(--sans); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--gray-500); background: var(--bg-soft); padding: 10px 14px; }
+.cmp-orig { text-decoration: line-through; color: var(--gray-500); opacity: .7; font-weight: 500; margin-right: 4px; }
+.cmp-sale { color: var(--green); font-weight: 800; }
+.cmp-yes { color: var(--green-check); font-weight: 800; }
+.cmp-no { color: var(--gray-500); }
+.cmp-cta-row td { padding-top: 16px; padding-bottom: 16px; }
+.cmp-cta { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 10px 16px; border-radius: 9px; width: 100%; box-sizing: border-box; }
+.cmp-cta:hover { background: var(--orange-hover); }
+
+.cmp-backdrop { position: fixed; inset: 0; background: rgba(10,15,25,.55); backdrop-filter: blur(2px); z-index: 90; display: none; align-items: flex-start; justify-content: center; padding: 40px 24px; }
+.cmp-backdrop.show { display: flex; }
+.cmp-modal { background: var(--surface); border-radius: 18px; max-width: 1080px; width: 100%; max-height: 86vh; overflow: auto; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
+.cmp-head { position: sticky; top: 0; z-index: 2; background: var(--surface); border-bottom: 1px solid var(--border); padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.cmp-head-title { font-family: var(--serif); font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 9px; }
+.cmp-close { border: 1px solid var(--border); background: var(--surface); width: 36px; height: 36px; border-radius: 9px; cursor: pointer; font-size: 16px; color: var(--gray-700); display: grid; place-items: center; }
+.cmp-close:hover { background: var(--bg-soft); }
+.cmp-body { padding: 20px 22px 24px; }
+
+.cmp-fullpage { position: fixed; inset: 0; background: var(--bg-page); z-index: 90; display: none; overflow: auto; }
+.cmp-fullpage.show { display: block; }
+.cmp-fp-bar { position: sticky; top: 0; z-index: 2; background: var(--surface); border-bottom: 1px solid var(--border); }
+.cmp-fp-bar-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.cmp-back { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--blue-dark); display: inline-flex; align-items: center; gap: 6px; }
+.cmp-fp-inner { max-width: 1200px; margin: 0 auto; padding: 26px 24px 60px; }
+.cmp-fp-title { font-family: var(--serif); font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0 0 6px; }
+.cmp-fp-sub { font-size: 15px; color: var(--gray-500); margin: 0 0 22px; }
+
+@media (max-width: 760px){
+  .cmp-table { display: block; overflow-x: auto; }
+  .compare-inner { flex-wrap: wrap; }
+}

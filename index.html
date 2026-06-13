@@ -600,6 +600,7 @@
 <link rel="canonical" href="https://comparepropfirms.com/">
 <link rel="stylesheet" href="/assets/cpf-base.css">
 <link rel="stylesheet" href="/assets/cpf-chrome.css">
+<link rel="stylesheet" href="/assets/cpf-compare.css">
 </head>
 <body>
 
@@ -1149,6 +1150,47 @@
 <!-- ============================ SITE FOOTER ============================ -->
 <!-- cpf-chrome-footer.html — shared SITE FOOTER markup (one source of truth). Paste at end of <body>, before scripts. -->
 <!-- cpf-chrome-footer.html — shared SITE FOOTER markup (one source of truth). Paste at end of <body>, before scripts. -->
+
+<!-- ============ COMPARE (tray + overlay + full page) ============ -->
+<div class="compare-tray" id="compare-tray">
+  <div class="compare-inner">
+    <div class="compare-label">Compare <span class="badge" id="compare-badge">0</span></div>
+    <div class="compare-slots" id="compare-slots"></div>
+    <div class="compare-actions">
+      <div class="seg" id="compare-mode-seg" title="How the comparison opens">
+        <button class="seg-btn active" type="button" data-cmode="overlay">Overlay</button>
+        <button class="seg-btn" type="button" data-cmode="fullpage">Full page</button>
+      </div>
+      <button class="compare-clear" id="compare-clear">Clear all</button>
+      <button class="compare-go" id="compare-go" disabled>Compare Firms →</button>
+    </div>
+  </div>
+</div>
+
+<div class="cmp-backdrop" id="cmp-backdrop">
+  <div class="cmp-modal" role="dialog" aria-modal="true" aria-label="Compare prop firms">
+    <div class="cmp-head">
+      <div class="cmp-head-title">⚖️ Compare Prop Firms</div>
+      <button class="cmp-close" id="cmp-modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="cmp-body" id="cmp-modal-body"></div>
+  </div>
+</div>
+
+<div class="cmp-fullpage" id="cmp-fullpage">
+  <div class="cmp-fp-bar">
+    <div class="cmp-fp-bar-inner">
+      <button class="cmp-back" id="cmp-fp-close">← Back to all firms</button>
+      <button class="nav-cta" type="button" data-open-compare>Compare Firms</button>
+    </div>
+  </div>
+  <div class="cmp-fp-inner">
+    <h1 class="cmp-fp-title">Side-by-Side Comparison</h1>
+    <p class="cmp-fp-sub">The firms you selected, lined up across every metric that matters — grouped by pricing, payouts, rules, permissions, and platforms.</p>
+    <div id="cmp-fp-body"></div>
+  </div>
+</div>
+
 <footer class="site-foot">
   <div class="foot-top">
     <!-- Brand -->
@@ -1271,19 +1313,15 @@
     els.forEach(function(el){ io.observe(el); });
   })();
 
-  // Firm cards: Expand Details + Add to Compare (cornerstone behavior)
+  // Firm cards: Expand Details (compare handled by /assets/cpf-compare.js)
   (function(){
     document.addEventListener('click', function(e){
       var toggle = e.target.closest('[data-toggle]');
       if(toggle){ var f = toggle.closest('.firm'); if(f) f.classList.toggle('open'); return; }
-      var cmp = e.target.closest('.add-compare');
-      if(cmp){
-        var added = cmp.classList.toggle('added');
-        cmp.textContent = added ? '\u2713 Added to Compare' : '\uFF0B Add to Compare';
-      }
     });
   })();
 </script>
+<script src="/assets/cpf-compare.js"></script>
 <script src="/assets/cpf-chrome.js"></script>
 </body>
 </html>
