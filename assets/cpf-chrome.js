@@ -77,3 +77,35 @@
       trig.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }); }
   })();
+
+
+/* ---- Footer email subscribe -> Klaviyo (public key + single-opt-in list) ---- */
+(function(){
+  var PUBLIC = "WU7kHX", LIST = "XjQSvh", REV = "2025-07-15";
+  function emailOk(e){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e); }
+  function wire(){
+    var btn = document.querySelector('.foot-subscribe'),
+        inp = document.querySelector('.foot-input');
+    if(!btn || !inp || btn.dataset.kvWired) return;
+    btn.dataset.kvWired = "1";
+    function msg(text, ok){
+      var form = btn.closest('.foot-form');
+      if(form){ form.innerHTML = '<p class="foot-form-msg" style="margin:0;font-size:14px;font-weight:600;color:'+(ok?'var(--blue)':'#c0392b')+'">'+text+'</p>'; }
+    }
+    btn.addEventListener('click', function(){
+      var email = (inp.value || '').trim();
+      if(!emailOk(email)){ inp.focus(); inp.style.borderColor = '#c0392b'; return; }
+      btn.disabled = true; var label = btn.textContent; btn.textContent = '\u2026';
+      fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + PUBLIC, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'revision': REV },
+        body: JSON.stringify({ data: { type: 'subscription', attributes: { profile: { data: { type: 'profile', attributes: { email: email } } } }, relationships: { list: { data: { type: 'list', id: LIST } } } } })
+      }).then(function(r){
+        if(r.status === 202 || r.ok){ msg("Thanks \u2014 you're subscribed!", true); }
+        else { btn.disabled = false; btn.textContent = label; msg('Something went wrong. Please try again.', false); }
+      }).catch(function(){ btn.disabled = false; btn.textContent = label; msg('Network error. Please try again.', false); });
+    });
+  }
+  if(document.readyState !== 'loading') wire();
+  else document.addEventListener('DOMContentLoaded', wire);
+})();
