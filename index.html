@@ -441,7 +441,6 @@
   .reveal.in { opacity: 1; transform: none; }
   @media (max-width: 540px) {
     .hero-visual { max-width: 100%; }
-    .hero-podium { transform: scale(.78); transform-origin: top center; height: 322px; }
   }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
 </style>
@@ -546,7 +545,7 @@
           side cards). Styled with the real component for realism, but the whole
           cluster is non-interactive (pointer-events:none) — it just shows what
           the experience looks like. ---- */
-  .hero-podium { position: relative; height: 400px; pointer-events: none; user-select: none; }
+  .hero-podium { position: relative; width: 520px; height: 400px; margin: 0 auto; transform-origin: top center; pointer-events: none; user-select: none; }
   .hero-podium .firm { position: absolute; margin: 0; }
   .hero-podium .firm-row { grid-template-columns: 1fr; grid-template-areas: "brand" "stats" "cta"; row-gap: 13px; padding: 16px; }
   .hero-podium .firm-rank, .hero-podium .firm-award, .hero-podium .firm-expand-bar, .hero-podium .firm-expand { display: none; }
@@ -571,6 +570,13 @@
   .hp-side .firm-tagline { display: none; }
   .hp-left  { left: 0;  transform: scale(.9); transform-origin: top left; }
   .hp-right { right: 0; transform: scale(.9); transform-origin: top right; }
+  /* podium scales as one fixed-size unit so card text never reflows */
+  @media (max-width: 1240px) { .hero-podium { transform: scale(.96); height: 384px; } }
+  @media (max-width: 1100px) { .hero-podium { transform: scale(.90); height: 360px; } }
+  @media (max-width: 760px)  { .hero-podium { transform: scale(.84); height: 336px; } }
+  @media (max-width: 540px)  { .hero-podium { transform: scale(.74); height: 296px; } }
+  @media (max-width: 430px)  { .hero-podium { transform: scale(.62); height: 248px; } }
+  @media (max-width: 360px)  { .hero-podium { transform: scale(.54); height: 216px; } }
   .hp-side .firm-row { padding-bottom: 18px; }
 
   /* ---- Top Funded Offers: always render the MOBILE (stacked) card face, but
