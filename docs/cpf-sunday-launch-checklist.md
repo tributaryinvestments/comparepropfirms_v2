@@ -11,7 +11,7 @@
 - [x] **15 firm review pages** `/prop-firm/<slug>/` — 11 original + apex-trader-funding · blusky-trading-company · my-funded-futures · top-one-futures
 - [x] **News hub** `/articles/` — 19 WP posts migrated at exact URLs
 - [x] **Crypto / Options / Forex** — pointed to WordPress in `routes.json` (lean static build deferred post-launch)
-- [ ] **Homepage** — attach `cpf-homepage.html` in chat and Claude builds it
+- [x] **Homepage "Explore Our Latest Guides"** — 4 placeholders replaced with real article links (beginner guide, Tradeify vs Apex vs Topstep, how-to-pass, payout guide); "View all guides" → `/articles/`
 - [ ] **Klaviyo** on the homepage signup — see §4
 
 ## 2. WIRE — make it work + go live
@@ -55,6 +55,8 @@ Then Claude wires the homepage form via Klaviyo embedded form (fastest for Sunda
 - [ ] Spot-check 2–3 firm data points per firm against the live firm sites
 
 ## 7. POST-LAUNCH backlog
-- [ ] Rich category sub-tabs (Accounts / Rules / Payouts) are data-driven only for Tradeify (`richTabs:true`); other firms show the lean overview. Build out when ready.
+- [x] **Rich category sub-tabs (Accounts / Rules / Payouts) now enabled for all 15 firms** (`richTabs:true` everywhere). Tradeify keeps its bespoke per-size pricing matrix; the other 14 firms render a **data-driven snapshot** built from their comparison data (`cmp`) — same 4-tab UI and styling, real first-party values, `‹VERIFY›` where unconfirmed. NOTE: the non-Tradeify **Accounts** tab is a key-terms snapshot, not a per-size pricing grid (granular per-size pricing only exists for Tradeify so far). To get the full per-size matrix for a specific firm, supply that firm’s per-size pricing and it can be built out.
 - [ ] Lean static crypto / options / forex category pages (currently WP).
 - [ ] Streaming/analytics (separate project): Apps Script TradingView webhook still on old deployment URL — update to new.
+
+> **Flag (visibility):** the main `/category/best-prop-firms/` page defaults to the `core` filter (the original 11 firms). The 4 new firms (Apex, BluSky, MFF, Top One) appear under their specific filters (instant-funding, no-evaluation, etc.) but **not** in the default flagship view. Confirm whether the new 4 should also be tagged `core` to show on the main page by default.
