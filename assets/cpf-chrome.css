@@ -186,7 +186,7 @@
   .mobile-nav-head .brand-logo { height: 24px; }
   .bbb-badge { display: block; height: 42px; width: auto; }
   .mobile-nav-foot .bbb-badge { height: 44px; }
-  .foot-logo-img { display: block; height: 28px; width: auto; }
+  .foot-logo-img { display: block; height: 28px; width: auto; max-width: none; flex-shrink: 0; }
   html.dark .foot-logo-img { filter: brightness(0) invert(1); }
 
   /* ===================== MOBILE NAV (drawer) ===================== */

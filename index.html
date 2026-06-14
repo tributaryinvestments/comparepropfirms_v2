@@ -144,7 +144,7 @@
   .mobile-nav-head .brand-logo { height: 24px; }
   .bbb-badge { display: block; height: 42px; width: auto; }
   .mobile-nav-foot .bbb-badge { height: 44px; }
-  .foot-logo-img { display: block; height: 28px; width: auto; }
+  .foot-logo-img { display: block; height: 28px; width: auto; max-width: none; flex-shrink: 0; }
   html.dark .foot-logo-img { filter: brightness(0) invert(1); }
 
   /* ===================== MOBILE NAV (drawer) ===================== */
@@ -802,12 +802,12 @@
   <div class="hsec">
     <h2 class="h-sec-title reveal" style="margin-bottom:20px">Browse by what matters most to you</h2>
     <div class="cat-grid reveal">
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--blue-soft);color:var(--blue)"><svg stroke="currentColor" viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="15" rx="2"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12.5l2 2 4-4"/></svg></div><div class="cat-label">Evaluations</div></a>
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--green-bg);color:var(--green-check)"><svg stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg></div><div class="cat-label">Instant Funding</div></a>
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--teal-soft);color:var(--teal)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18l-4-3-4 3-4-3z"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div><div class="cat-label">No Funded Consistency</div></a>
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--purple-soft);color:var(--purple)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a5 5 0 0 1 0 6"/></svg></div><div class="cat-label">Best for News Trading</div></a>
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--red-soft);color:var(--red)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></div><div class="cat-label">100% Profit Split</div></a>
-      <a class="cat-tile"><div class="cat-ico" style="background:var(--orange-soft);color:var(--orange-deep)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="cat-label">Instant Payouts</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/one-step-evaluation/"<div class="cat-ico" style="background:var(--blue-soft);color:var(--blue)"><svg stroke="currentColor" viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="15" rx="2"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12.5l2 2 4-4"/></svg></div><div class="cat-label">Evaluations</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/instant-funding/"<div class="cat-ico" style="background:var(--green-bg);color:var(--green-check)"><svg stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg></div><div class="cat-label">Instant Funding</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/"<div class="cat-ico" style="background:var(--teal-soft);color:var(--teal)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18l-4-3-4 3-4-3z"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div><div class="cat-label">No Funded Consistency</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/"<div class="cat-ico" style="background:var(--purple-soft);color:var(--purple)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a5 5 0 0 1 0 6"/></svg></div><div class="cat-label">Best for News Trading</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/profit-split-bonus-offers/"<div class="cat-ico" style="background:var(--red-soft);color:var(--red)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></div><div class="cat-label">100% Profit Split</div></a>
+      <a class="cat-tile" href="/category/best-prop-firms/"<div class="cat-ico" style="background:var(--orange-soft);color:var(--orange-deep)"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="cat-label">Instant Payouts</div></a>
     </div>
   </div>
 </section>
@@ -1047,19 +1047,19 @@
     </div>
     <div class="guides-grid reveal">
       <a class="guide-card" href="/what-is-a-prop-firm-the-complete-beginners-guide-2026/">
-        <div class="guide-img" style="background:linear-gradient(135deg,#1e3a8a,#0b1730)"><span class="gtag">Guide</span></div>
+        <div class="guide-img" style="background:linear-gradient(180deg,rgba(11,23,48,.10),rgba(11,23,48,.58)),url(/cpf-post-images/what-is-a-prop-firm-the-complete-beginners-guide-2026.png) center/cover"><span class="gtag">Guide</span></div>
         <div class="guide-body"><h4>What Is a Prop Firm? A Beginner's Guide</h4><p>Everything you need to know to get funded in 2026.</p></div>
       </a>
       <a class="guide-card" href="/tradeify-vs-apex-trader-funding-vs-topstep-head-to-head-comparison-2026/">
-        <div class="guide-img" style="background:linear-gradient(135deg,#0e7490,#1e3a8a)"><span class="gtag">Comparison</span></div>
+        <div class="guide-img" style="background:linear-gradient(180deg,rgba(11,23,48,.10),rgba(11,23,48,.58)),url(/cpf-post-images/tradeify-vs-apex-trader-funding-vs-topstep-head-to-head-comparison-2026.jpg) center/cover"><span class="gtag">Comparison</span></div>
         <div class="guide-body"><h4>Tradeify vs Apex vs Topstep</h4><p>A head-to-head comparison of three top firms.</p></div>
       </a>
       <a class="guide-card" href="/how-to-pass-a-prop-firm-evaluation-10-proven-strategies-2026/">
-        <div class="guide-img" style="background:linear-gradient(135deg,#1f2937,#0b1220)"><span class="gtag">Strategy</span></div>
+        <div class="guide-img" style="background:linear-gradient(180deg,rgba(11,23,48,.10),rgba(11,23,48,.58)),url(/cpf-post-images/how-to-pass-a-prop-firm-evaluation-10-proven-strategies-2026.jpg) center/cover"><span class="gtag">Strategy</span></div>
         <div class="guide-body"><h4>How to Pass a Prop Firm Evaluation</h4><p>10 proven strategies from funded traders.</p></div>
       </a>
       <a class="guide-card" href="/prop-firm-payout-guide-2026-how-when-how-much-you-actually-get-paid/">
-        <div class="guide-img" style="background:linear-gradient(135deg,#2554c7,#0b1730)"><span class="gtag">Tips</span></div>
+        <div class="guide-img" style="background:linear-gradient(180deg,rgba(11,23,48,.10),rgba(11,23,48,.58)),url(/cpf-post-images/prop-firm-payout-guide-2026-how-when-how-much-you-actually-get-paid.png) center/cover"><span class="gtag">Tips</span></div>
         <div class="guide-body"><h4>Prop Firm Payout Guide</h4><p>How, when, and how much you actually get paid.</p></div>
       </a>
     </div>

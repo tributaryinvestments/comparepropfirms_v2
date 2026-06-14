@@ -145,6 +145,7 @@ const FIRMS = [
     logo: "ALPHA", grad: "linear-gradient(135deg,#0f766e,#0b4f49)",
     ribbon: "One-Step Eval", award: null,
     rating: 4.9, tagline: "EOD drawdown & fast payouts",
+    cmp: {fee:"$79<span style='color:var(--gray-500)'>/mo</span>",split:"90% / 10%",payout:"5 winning days",payoutFreq:"Up to 4×/month",processing:"≤48 business hrs",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD Trailing",dailyLoss:"\u2039VERIFY\u203a",consistency:"50% (eval)",maxAcc:"5 funded",sizes:"$50k–$150k",minDays:"1–2 days",resets:"Available",scaling:"<span class='cmp-yes'>Yes</span>",instant:"<span class='cmp-no'>No</span>",actFee:"$0–$149",news:"<span class='cmp-yes'>Yes</span>",bots:"Semi-auto only",copy:"<span class='cmp-yes'>Yes</span>",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"6",score:"4.9"},
     chev: {
       price: { value:"$79", meta:"Zero 25K / mo", label:"Lowest Monthly" },
       split: { value:"90%", meta:"To Trader", label:"Profit Split" },
@@ -216,6 +217,7 @@ const FIRMS = [
     logo: "FN", grad: "linear-gradient(135deg,#7c3aed,#4c1d95)",
     ribbon: "4 Models", award: null,
     rating: 4.5, tagline: "Industry-low evaluation profit targets",
+    cmp: {fee:"\u2039VERIFY\u203a",split:"80% → 90%",payout:"\u2039VERIFY\u203a",payoutFreq:"\u2039VERIFY\u203a",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD Trailing",dailyLoss:"\u2039VERIFY\u203a",consistency:"\u2039VERIFY\u203a",maxAcc:"5 funded",sizes:"$25k–$150k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"None",news:"<span class='cmp-yes'>Yes</span>",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.5"},
     chev: {
       price: { value:"$79.99", meta:"Flex $50K", label:"Lowest Entry Fee" },
       split: { value:"Up to 90%", meta:"To Trader", label:"Reward Share" },
@@ -243,6 +245,7 @@ const FIRMS = [
     logo: "BX", grad: "linear-gradient(135deg,#0891b2,#0e4f6b)",
     ribbon: "Weekly Payouts", award: null,
     rating: 4.3, tagline: "Best-value futures evals with weekly payouts",
+    cmp: {fee:"\u2039VERIFY\u203a",split:"100% first $10K",payout:"\u2039VERIFY\u203a",payoutFreq:"Weekly",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"Trailing or EOD",dailyLoss:"\u2039VERIFY\u203a",consistency:"\u2039VERIFY\u203a",maxAcc:"\u2039VERIFY\u203a",sizes:"$25k–$250k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"\u2039VERIFY\u203a",news:"<span class='cmp-yes'>Yes</span>",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.3"},
     chev: {
       price: { value:"$19", meta:"+ $149 Funding Fee", label:"True Funding Fee" },
       split: { value:"100%", meta:"First $10K", label:"Profit Split" },
@@ -270,6 +273,7 @@ const FIRMS = [
     logo: "DT", grad: "linear-gradient(135deg,#dc2626,#7f1d1d)",
     ribbon: "100% Split", award: null,
     rating: 4.5, tagline: "100% profit split with automated payouts",
+    cmp: {fee:"\u2039VERIFY\u203a",split:"100% (Pro)",payout:"\u2039VERIFY\u203a",payoutFreq:"\u2039VERIFY\u203a",processing:"~32 min (Plane)",minPayout:"\u2039VERIFY\u203a",drawdown:"Trailing / EOD / Static",dailyLoss:"\u2039VERIFY\u203a",consistency:"\u2039VERIFY\u203a",maxAcc:"Up to 15",sizes:"$25k–$300k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-yes'>Yes</span>",actFee:"\u2039VERIFY\u203a",news:"<span class='cmp-yes'>Yes</span>",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.5"},
     chev: {
       price: { value:"$30", meta:"$50K \u00b7 +$130 Fee", label:"True Funding Fee" },
       split: { value:"100%", meta:"To Trader", label:"Profit Split" },
@@ -297,6 +301,7 @@ const FIRMS = [
     logo: "FFN", grad: "linear-gradient(135deg,#2563eb,#1e3a8a)",
     ribbon: "Same-Day Pay", award: null,
     rating: 4.4, tagline: "Same-day payouts \u00b7 EOD drawdown",
+    cmp: {fee:"\u2039VERIFY\u203a",split:"80% → 90%",payout:"\u2039VERIFY\u203a",payoutFreq:"\u2039VERIFY\u203a",processing:"Same day",minPayout:"\u2039VERIFY\u203a",drawdown:"Trailing / EOD",dailyLoss:"\u2039VERIFY\u203a",consistency:"\u2039VERIFY\u203a",maxAcc:"10 / 5 funded",sizes:"$25k–$250k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"\u2039VERIFY\u203a",actFee:"\u2039VERIFY\u203a",news:"\u2039VERIFY\u203a",bots:"\u2039VERIFY\u203a",copy:"<span class='cmp-yes'>Yes</span>",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.4"},
     chev: {
       price: { value:"$40", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80% \u2192 90%", meta:"Up to 90%", label:"Profit Split" },
@@ -324,6 +329,7 @@ const FIRMS = [
     logo: "TD", grad: "linear-gradient(135deg,#0d9488,#134e4a)",
     ribbon: "No Activation", award: null,
     rating: 4.3, tagline: "Day-one payouts \u00b7 no activation fee",
+    cmp: {fee:"$62.50<span style='color:var(--gray-500)'>/mo</span>",split:"80% → 90%",payout:"Day 1 (Quick Pay)",payoutFreq:"\u2039VERIFY\u203a",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"Intraday / EOD",dailyLoss:"\u2039VERIFY\u203a",consistency:"\u2039VERIFY\u203a",maxAcc:"\u2039VERIFY\u203a",sizes:"$50k–$100k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"None",news:"\u2039VERIFY\u203a",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.3"},
     chev: {
       price: { value:"$62.50", meta:"50K Quick Pay / mo", label:"Lead Price" },
       split: { value:"80%", meta:"To Trader", label:"Profit Split" },
@@ -351,6 +357,7 @@ const FIRMS = [
     logo: "TPT", grad: "linear-gradient(135deg,#ea580c,#7c2d12)",
     ribbon: "No DLL", award: null,
     rating: 4.3, tagline: "Day-one payouts \u00b7 no daily loss limit",
+    cmp: {fee:"\u2039VERIFY\u203a",split:"80% → 90%",payout:"\u2039VERIFY\u203a",payoutFreq:"\u2039VERIFY\u203a",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"Trailing",dailyLoss:"None",consistency:"\u2039VERIFY\u203a",maxAcc:"\u2039VERIFY\u203a",sizes:"$25k–$150k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"$0 (code NOFEE30)",news:"\u2039VERIFY\u203a",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"\u2039VERIFY\u203a",refund:"\u2039VERIFY\u203a",platforms:"\u2039VERIFY\u203a",score:"4.3"},
     chev: {
       price: { value:"$119", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80\u201390%", meta:"PRO \u2192 PRO+", label:"Profit Split" },
