@@ -16,6 +16,7 @@
 <link rel="canonical" href="https://comparepropfirms.com/category/best-prop-firms/no-evaluation-funding-fee/">
 <link rel="stylesheet" href="/assets/cpf-base.css">
 <link rel="stylesheet" href="/assets/cpf-chrome.css">
+<link rel="stylesheet" href="/assets/cpf-rich-detail.css">
 <style>
   /* ============================================================
      DESIGN TOKENS — copied verbatim from the Tradeify firm page
@@ -1047,6 +1048,7 @@
 </footer>
 
 <script src="/assets/cpf-chrome.js"></script>
+<script src="/assets/cpf-rich-detail.js"></script>
 <script>
 /* ============================================================
    FIRM DATA — one object per firm (scales to 50+).
@@ -1558,7 +1560,7 @@ function payoutsSnapshot(f){
 
 
 function accountsTabHTML(f){
-  if(f.id!=='tradeify') return accountsSnapshot(f);
+  if(f.id!=='tradeify'){ if(window.RICH_DETAIL&&RICH_DETAIL[f.id]&&RICH_DETAIL[f.id].accounts) return '<div class="ex-panel-head"><div><div class="ex-panel-title">📋 Account Comparison</div><div class="ex-panel-sub">All account types &amp; sizes for '+f.name+'.</div></div><a class="sec-link" href="'+f.fullPage+'">See full account details →</a></div>'+RICH_DETAIL[f.id].accounts; return accountsSnapshot(f); }
   return `
   <div class="ex-panel-head">
     <div><div class="ex-panel-title">📋 Account Comparison</div>
@@ -1645,7 +1647,7 @@ function accountsTabHTML(f){
 }
 
 function rulesTabHTML(f){
-  if(f.id!=='tradeify') return rulesSnapshot(f);
+  if(f.id!=='tradeify'){ if(window.RICH_DETAIL&&RICH_DETAIL[f.id]&&RICH_DETAIL[f.id].rules) return RICH_DETAIL[f.id].rules+'<div class="rules-disclaimer"><div class="rules-disclaimer-text"><div class="rules-disclaimer-icon">ⓘ</div><div>Rules are subject to change. Review the full rulebook before purchasing.</div></div><a class="sec-link" href="'+f.fullPage+'">View Full Rulebook →</a></div>'; return rulesSnapshot(f); }
   const item = (label, badgeClass, badge, note) =>
     `<div class="rule-item"><div class="rule-item-label">${label} <span class="info">ⓘ</span></div><div class="rule-item-value"><span class="rule-badge ${badgeClass}">${badge}</span></div>${note?`<div class="rule-item-note">${note}</div>`:''}</div>`;
   const group = (icon, iconClass, title, desc, items) =>
@@ -1695,7 +1697,7 @@ function rulesTabHTML(f){
 }
 
 function payoutsTabHTML(f){
-  if(f.id!=='tradeify') return payoutsSnapshot(f);
+  if(f.id!=='tradeify'){ if(window.RICH_DETAIL&&RICH_DETAIL[f.id]&&RICH_DETAIL[f.id].payouts) return RICH_DETAIL[f.id].payouts; return payoutsSnapshot(f); }
   const card = (cls, icon, name, tag, sub, sizes, stats, toggle) => `
     <div class="account-card ${cls}">
       <div class="ac-header"><div class="ac-title-row"><div class="ac-title"><span class="ac-title-icon">${icon}</span>${name}</div><span class="ac-tag ${cls}">${tag}</span></div><div class="ac-sub">${sub}</div></div>
