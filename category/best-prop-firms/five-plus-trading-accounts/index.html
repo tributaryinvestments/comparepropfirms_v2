@@ -1048,7 +1048,6 @@
 </footer>
 
 <script src="/assets/cpf-chrome.js"></script>
-<script src="/assets/cpf-rich-detail.js"></script>
 <script>
 /* ============================================================
    FIRM DATA — one object per firm (scales to 50+).
@@ -1459,7 +1458,8 @@ const FIRMS = [
    ============================================================ */
 const compareSet = new Set();
 const listEl = document.getElementById('firm-list');
-let detailMode = 'lean';     // 'rich' | 'lean'  — toggled in the controls row
+let detailMode = 'lean';
+  function loadRichDetail(){ if(window.__richP) return window.__richP; window.__richP=new Promise(function(res){var s=document.createElement('script');s.src='/assets/cpf-rich-detail.js';s.onload=function(){res();};s.onerror=function(){res();};document.head.appendChild(s);}); return window.__richP; }     // 'rich' | 'lean'  — toggled in the controls row
 let compareMode = 'overlay'; // 'overlay' | 'fullpage' — toggled in the compare tray
 
 /* ============================================================
@@ -1826,11 +1826,11 @@ function firmHTML(f){
           <div class="lean-grid">
             <div class="lean-col pros">
               <div class="lean-col-head">✓ Why traders pick ${f.name}</div>
-              <ul class="pc-list pros">${f.pros.slice(0,3).map(p=>`<li>${p}</li>`).join('')}</ul>
+              <ul class="pc-list pros">${f.pros.map(p=>`<li>${p}</li>`).join('')}</ul>
             </div>
             <div class="lean-col cons">
               <div class="lean-col-head">✕ Keep in mind</div>
-              <ul class="pc-list cons">${f.cons.slice(0,2).map(c=>`<li>${c}</li>`).join('')}</ul>
+              <ul class="pc-list cons">${f.cons.map(c=>`<li>${c}</li>`).join('')}</ul>
             </div>
             <div class="verdict-box">
               <div class="verdict-head">💡 30-second verdict</div>
@@ -2058,7 +2058,7 @@ document.querySelectorAll('#detail-seg .seg-btn').forEach(b=>{
     document.querySelectorAll('#detail-seg .seg-btn').forEach(x=>x.classList.remove('active'));
     b.classList.add('active');
     detailMode = b.dataset.detail;
-    applyView();
+    if(detailMode==='rich'&&!window.RICH_DETAIL){loadRichDetail().then(applyView);}else{applyView();}
   });
 });
 
