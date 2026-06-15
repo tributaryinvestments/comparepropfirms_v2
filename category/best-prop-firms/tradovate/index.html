@@ -870,14 +870,14 @@
   <p class="pf-sub">Trade on Tradovate — compare the top futures prop firms that support the Tradovate platform.</p>
   <div class="pf-featured">
     <span class="pf-featured-label">Featured in</span>
-    <img class="pf-featured-img" src="/assets/press/pbs.png" alt="PBS"><img class="pf-featured-img" src="/assets/press/forbes.png" alt="Forbes"><img class="pf-featured-img" src="/assets/press/usatoday.png" alt="USA TODAY"><img class="pf-featured-img" src="/assets/press/norton.png" alt="Norton Secured">
+    <img class="pf-featured-img" src="/assets/press/pbs.png?v=2" alt="PBS"><img class="pf-featured-img" src="/assets/press/forbes.png" alt="Forbes"><img class="pf-featured-img" src="/assets/press/usatoday.png" alt="USA TODAY"><img class="pf-featured-img" src="/assets/press/norton.png" alt="Norton Secured">
   </div>
 </header>
 
 <!-- ============ STICKY TOOLBAR ============ -->
 <div class="pf-toolbar-wrap">
   <div class="pf-toolbar">
-    <div class="pf-filters" id="filters"><button class="filter-pill" data-filter="core">Best Futures Firms</button><button class="filter-pill" data-filter="eval">1 Step Evaluations</button><button class="filter-pill" data-filter="instant">Instant Funding</button><button class="filter-pill" data-filter="noeval">No Funding Fees</button><button class="filter-pill" data-filter="live">Live Trading Path</button><button class="filter-pill" data-filter="fiveplus">5+ Accounts</button><button class="filter-pill" data-filter="split100">100% Profit Split</button><button class="filter-pill" data-filter="tradovate">Tradovate</button><button class="filter-pill" data-filter="news">Trade News</button><button class="filter-pill" data-filter="noconsistency">No Funded Consistency</button></div>
+    <div class="pf-filters" id="filters"><button class="filter-pill" data-filter="core">Best Futures Firms</button><button class="filter-pill" data-filter="eval">1 Step Evaluations</button><button class="filter-pill" data-filter="instant">Instant Funding</button><button class="filter-pill" data-filter="noeval">No Funding Fees</button><button class="filter-pill" data-filter="live">Live Trading Path</button><button class="filter-pill" data-filter="fiveplus">5+ Accounts</button><button class="filter-pill" data-filter="split100">100% Profit Split</button><button class="filter-pill" data-filter="news">Trade News</button><button class="filter-pill" data-filter="noconsistency">No Funded Consistency</button></div>
   </div>
 </div>
 
@@ -1954,7 +1954,7 @@ function renderTray(){
   tray.classList.toggle('show', compareSet.size > 0);
   slots.innerHTML = [...compareSet].map(id=>{
     const f = FIRMS.find(x=>x.id===id);
-    return `<div class="compare-slot"><span class="mini-logo" style="background:${f.grad}">${f.logo.slice(0,3)}</span>${f.name}<span class="remove" data-remove="${id}">✕</span></div>`;
+    return `<div class="compare-slot"><span class="mini-logo"><img src="/cpf-logos/${f.link.replace('/prop-firm/','').replace(/\/$/,'')}-logo.png" alt="${f.name}"></span>${f.name}<span class="remove" data-remove="${id}">✕</span></div>`;
   }).join('');
   slots.querySelectorAll('[data-remove]').forEach(x=>{
     x.addEventListener('click', ()=>{ compareSet.delete(x.dataset.remove); syncCompareButtons(); renderTray(); });
@@ -1990,7 +1990,7 @@ function comparisonTableHTML(rows){
   const colCount = firms.length + 1;
   const heads = firms.map(f=>`
     <th>
-      <div class="cmp-firm-logo" style="background:${f.grad}">${f.logo}</div>
+      <div class="cmp-firm-logo"><img src="/cpf-logos/${f.link.replace('/prop-firm/','').replace(/\/$/,'')}-logo.png" alt="${f.name} logo"></div>
       <div class="cmp-firm-name">${f.name}</div>
       <div class="cmp-firm-stars">★★★★★</div>
       <div class="cmp-firm-score">${typeof f.rating==='number'?f.rating.toFixed(1):'—'} · CPF Score</div>
