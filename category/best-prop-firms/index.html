@@ -1172,7 +1172,7 @@ const FIRMS = [
     ribbon: "Instant Funding", award: null,
     rating: 4.9, tagline: "Fast track to live with zero payout denials",
     chev: {
-      price: { value:"$349", meta:"$50K Instant", label:"True Funding Fee" },
+      price: { value:"$349", orig:"$549", meta:"$50K Instant", label:"True Funding Fee" },
       split: { value:"90%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"36%", meta:"Save up to", label:"Limited Time Offer" }
     },
@@ -1217,7 +1217,7 @@ const FIRMS = [
     ribbon: "One-Step Eval", award: null,
     rating: 4.9, tagline: "EOD drawdown & fast payouts",
     chev: {
-      price: { value:"$79", meta:"Zero 25K / mo", label:"Lowest Monthly" },
+      price: { value:"$59", orig:"$79", meta:"Zero 25K / mo", label:"Lowest Monthly" },
       split: { value:"90%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"25%", meta:"Save up to", label:"All Accounts" }
     },
@@ -1246,7 +1246,7 @@ const FIRMS = [
     ribbon: null, award: "🎖️ Most Established",
     rating: 4.8, tagline: "Longest running prop firm, founded in 2010",
     chev: {
-      price: { value:"$85/mo", meta:"$50K Eval", label:"True Funding Fee" },
+      price: { value:"$85/mo", orig:"$95", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"100%", meta:"First $10K", label:"Profit Split" },
       save:  { value:"70%", meta:"Save up to", label:"Limited Time Offer" }
     },
@@ -1291,7 +1291,7 @@ const FIRMS = [
     ribbon: "4 Models", award: null,
     rating: 4.5, tagline: "Industry-low evaluation profit targets",
     chev: {
-      price: { value:"$79.99", meta:"Flex $50K", label:"Lowest Entry Fee" },
+      price: { value:"$79.99", orig:"$133.99", meta:"Flex $50K", label:"Lowest Entry Fee" },
       split: { value:"Up to 90%", meta:"To Trader", label:"Reward Share" },
       save:  { value:"40%", meta:"Save up to", label:"Flex Launch Offer" }
     },
@@ -1320,7 +1320,7 @@ const FIRMS = [
     ribbon: "Weekly Payouts", award: null,
     rating: 4.3, tagline: "Best-value futures evals with weekly payouts",
     chev: {
-      price: { value:"$19", meta:"+ $149 Funding Fee", label:"True Funding Fee" },
+      price: { value:"$19", orig:"$175", meta:"+ $149 Funding Fee", label:"True Funding Fee" },
       split: { value:"100%", meta:"First $10K", label:"Profit Split" },
       save:  { value:"89%", meta:"Save up to", label:"Trailing \u00b7 Code 5JESS" }
     },
@@ -1349,7 +1349,7 @@ const FIRMS = [
     ribbon: "100% Split", award: null,
     rating: 4.5, tagline: "100% profit split with automated payouts",
     chev: {
-      price: { value:"$30", meta:"$50K \u00b7 +$130 Fee", label:"True Funding Fee" },
+      price: { value:"$30", orig:"$200", meta:"$50K \u00b7 +$130 Fee", label:"True Funding Fee" },
       split: { value:"100%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"90%", meta:"Save up to", label:"Limited Time" }
     },
@@ -1378,7 +1378,7 @@ const FIRMS = [
     ribbon: "Same-Day Pay", award: null,
     rating: 4.4, tagline: "Same-day payouts \u00b7 EOD drawdown",
     chev: {
-      price: { value:"$40", meta:"$50K Eval", label:"True Funding Fee" },
+      price: { value:"$40", orig:"$80", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80% \u2192 90%", meta:"Up to 90%", label:"Profit Split" },
       save:  { value:"75%", meta:"Save up to", label:"BOGO June Sale" }
     },
@@ -1407,7 +1407,7 @@ const FIRMS = [
     ribbon: "No Activation", award: null,
     rating: 4.3, tagline: "Day-one payouts \u00b7 no activation fee",
     chev: {
-      price: { value:"$62.50", meta:"50K Quick Pay / mo", label:"Lead Price" },
+      price: { value:"$62.50", orig:"$125", meta:"50K Quick Pay / mo", label:"Lead Price" },
       split: { value:"80%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"50%", meta:"Save up to", label:"All Plans" }
     },
@@ -1436,7 +1436,7 @@ const FIRMS = [
     ribbon: "No DLL", award: null,
     rating: 4.3, tagline: "Day-one payouts \u00b7 no daily loss limit",
     chev: {
-      price: { value:"$119", meta:"$50K Eval", label:"True Funding Fee" },
+      price: { value:"$119", orig:"$170", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80\u201390%", meta:"PRO \u2192 PRO+", label:"Profit Split" },
       save:  { value:"35%", meta:"Save up to", label:"June Sale" }
     },
@@ -1765,8 +1765,8 @@ function chevHTML(c){
       </div>
       <div class="chev orange">
         <div class="chev-icon">🔥</div>
-        <div class="chev-value">${c.save.value}</div>
         <div class="chev-meta">${c.save.meta}</div>
+        <div class="chev-value">${c.save.value}</div>
         <div class="chev-label">${c.save.label}</div>
       </div>
     </div>`;
