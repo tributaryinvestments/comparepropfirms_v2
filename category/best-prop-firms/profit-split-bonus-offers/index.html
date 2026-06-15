@@ -723,10 +723,8 @@
   .firm-logo.logo-img{background:transparent;padding:0;overflow:hidden;border-radius:12px;}
   .firm-logo.logo-img img{width:100%;height:100%;object-fit:cover;display:block;}
 
-  /* ---- mobile press strip 3-per-row + 50% size; hide detail toggle (R4/R5/R6) ---- */
+  /* ---- mobile: shrink featured-in logos ~50% (R5) + hide detail toggle (R4); original flex layout kept ---- */
   @media (max-width: 760px) {
-    .pf-featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 10px; align-items: center; justify-items: center; }
-    .pf-featured-label { grid-column: 1 / -1; text-align: center; }
     .pf-featured-img { height: 11px; }
     .detail-toggle { display: none !important; }
   }
