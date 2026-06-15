@@ -38,3 +38,12 @@
 
   /* reduced motion */
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* ===== Article body tables & figures (raw WP content normalization) ===== */
+.prose figure{margin:24px 0;max-width:100%;overflow-x:auto;}
+.prose figure>img{max-width:100%;height:auto;border-radius:12px;display:block;}
+.prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;line-height:1.5;border:1px solid var(--border,#e2e8f0);border-radius:12px;overflow:hidden;}
+.prose figure table{margin:0;border-radius:12px;}
+.prose thead th{background:var(--ink,#11243d);color:#fff;font-weight:700;font-size:13px;letter-spacing:.02em;text-align:left;padding:12px 15px;}
+.prose td,.prose tbody th{padding:11px 15px;border-top:1px solid var(--border,#e2e8f0);vertical-align:top;text-align:left;}
+.prose tbody tr:nth-child(even){background:#f8fafc;}
