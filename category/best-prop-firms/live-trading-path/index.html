@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Prop Firms With a Live Trading Path — Updated June 2026 | ComparePropFirms.com</title>
 <script>(function(){try{if(localStorage.getItem('cpf-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();</script>
@@ -172,6 +177,7 @@
     font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--gray-500);
   }
+  .pf-featured-img { height: 22px; width: auto; opacity: .9; display: inline-block; vertical-align: middle; filter: grayscale(1); }
   .pf-featured-logo {
     font-weight: 800; color: var(--gray-300); letter-spacing: 0.02em;
     font-size: 17px; opacity: .9;
@@ -750,7 +756,7 @@
             <a class="mega-link" href="/category/best-prop-firms/"><span class="mi"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.2l1-5.8L3.5 9.2l5.9-.9z"/></svg></span>Best Funding Offers 2026</a>
             <a class="mega-link" href="/category/best-prop-firms/instant-funding/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>Instant Funding</a>
             <a class="mega-link" href="/category/best-prop-firms/one-step-evaluation/"><span class="mi"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6V6H9zM9 11h6M9 15h4"/></svg></span>One-Step Evaluation</a>
-            <a class="mega-link" href="/category/best-prop-firms/no-evaluation-funding-fee/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/></svg></span>No Evaluation / Funding Fee</a>
+            <a class="mega-link" href="/category/best-prop-firms/no-evaluation-funding-fee/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/></svg></span>No Funding Fees</a>
             <a class="mega-link" href="/category/best-prop-firms/live-trading-path/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 3 4-6"/></svg></span>Live Trading Path</a>
           </div>
           <div class="mega-col">
@@ -818,7 +824,7 @@
           <a class="m-sublink" href="/category/best-prop-firms/">Best Funding Offers 2026</a>
           <a class="m-sublink" href="/category/best-prop-firms/instant-funding/">Instant Funding</a>
           <a class="m-sublink" href="/category/best-prop-firms/one-step-evaluation/">One-Step Evaluation</a>
-          <a class="m-sublink" href="/category/best-prop-firms/no-evaluation-funding-fee/">No Evaluation / Funding Fee</a>
+          <a class="m-sublink" href="/category/best-prop-firms/no-evaluation-funding-fee/">No Funding Fees</a>
           <a class="m-sublink" href="/category/best-prop-firms/live-trading-path/">Live Trading Path</a>
         </div>
         <div class="m-group">
@@ -864,23 +870,14 @@
   <p class="pf-sub">Trade real capital — compare prop firms that move you from a simulated account to a live, real-money trading path.</p>
   <div class="pf-featured">
     <span class="pf-featured-label">Featured in</span>
-    <span class="pf-featured-logo">◉ PBS</span>
-    <span class="pf-featured-logo serif">Forbes</span>
-    <span class="pf-featured-logo">USA TODAY</span>
-    <span class="pf-featured-logo norton">✓ Norton<small style="font-size:7px;opacity:.7;">SECURED</small></span>
+    <img class="pf-featured-img" src="/assets/press/pbs.png" alt="PBS"><img class="pf-featured-img" src="/assets/press/forbes.png" alt="Forbes"><img class="pf-featured-img" src="/assets/press/usatoday.png" alt="USA TODAY"><img class="pf-featured-img" src="/assets/press/norton.png" alt="Norton Secured">
   </div>
 </header>
 
 <!-- ============ STICKY TOOLBAR ============ -->
 <div class="pf-toolbar-wrap">
   <div class="pf-toolbar">
-    <div class="pf-filters" id="filters">
-      <button class="filter-pill" data-filter="eval">Evaluations</button>
-      <button class="filter-pill" data-filter="instant">Instant Funding</button>
-      <button class="filter-pill" data-filter="fiveplus">5+ Accounts</button>
-      <button class="filter-pill" data-filter="split100">Profit Split</button>
-      <button class="filter-pill" data-filter="news">Trade News</button>
-    </div>
+    <div class="pf-filters" id="filters"><button class="filter-pill" data-filter="core">Best Futures Firms</button><button class="filter-pill" data-filter="eval">1 Step Evaluations</button><button class="filter-pill" data-filter="instant">Instant Funding</button><button class="filter-pill" data-filter="fiveplus">5+ Accounts</button><button class="filter-pill" data-filter="split100">100% Profit Split</button><button class="filter-pill" data-filter="news">Trade News</button><button class="filter-pill" data-filter="noconsistency">No Funded Consistency</button></div>
   </div>
 </div>
 
@@ -1109,7 +1106,7 @@ const FIRMS = [
     richTabs: true,
     fullPage: "/prop-firm/tradeify/"
   },
-{id:"mff",rank:14,name:"My Funded Futures",link:"/prop-firm/my-funded-futures/",affiliate:"https://myfundedfutures.com/",logo:"MFF",grad:"linear-gradient(135deg,#d4af37,#8a6d1f)",ribbon:"Evaluation",award:null,rating:4.0,tagline:"Daily payouts on Rapid, no activation fees",chev:{price:{value:"$92",orig:"$153",meta:"$50K Eval",label:"True Funding Fee"},split:{value:"80\u201390%",meta:"To Trader",label:"Profit Split"},save:{value:"40%",meta:"Save up to",label:"Limited Time Offer"}},promo:"40% Off Builder 50K \u00b7 Use Promo Code: <span class='promo-code-pill'>BUILDER</span>",tags:["eval","fiveplus","news"],sortPrice:92,sortSave:40,pros:["Daily payouts on Rapid \u2014 request every 24 hours, most approved instantly","90% / 10% split on Rapid, the best at the firm","No activation fees on any plan \u2014 ever","Up to $100,000 in payouts per user on Pro","End-of-day trailing drawdown on every evaluation","Four genuinely different plans: Flex, Pro, Rapid, Builder"],cons:["Rapid\u2019s funded drawdown trails intraday \u2014 far less forgiving than EOD","Tier-1 news trading blocked on Rapid &amp; Pro sim funded accounts","50% consistency rule in every evaluation except Builder","Flex payouts cap at $1,000\u2013$2,000 per cycle; Builder at $2,000","Hedging prohibited \u2014 including mini vs. micro on the same underlying"],verdict:"MFF's Rapid plan is the standout \u2014 90/10 split with daily payouts and zero activation fees. Just mind the intraday funded drawdown and news limits on Rapid/Pro.",platforms:{count:7,sample:["Tradovate","TradingView","NinjaTrader","Quantower","Volumetrica"]},allowed:["Futures","4 Plan Types","Daily Payouts (Rapid)"],watch:[["\u26a0","News Blocked (Rapid/Pro)","caution"],["\ud83d\uded1","No Hedging","danger"],["\u26a0","50% Consistency","caution"]],cmp:{fee:"<span class='cmp-orig'>$153</span><span class='cmp-sale'>$92</span>",split:"80%\u201390% (Rapid 90%)",payout:"Daily (Rapid)",payoutFreq:"Every 24h (Rapid)",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD Trailing (eval)",dailyLoss:"\u2039VERIFY\u203a",consistency:"50% (except Builder)",maxAcc:"\u2039VERIFY\u203a",sizes:"$25k\u2013$150k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"None",news:"Limited (blocked on Rapid/Pro)",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"<span class='cmp-no'>No</span>",refund:"<span class='cmp-no'>No</span>",platforms:"7",score:"4.0"},richTabs:true,fullPage:"/prop-firm/my-funded-futures/"},
+{id:"mff",rank:14,name:"My Funded Futures",link:"/prop-firm/my-funded-futures/",affiliate:"https://myfundedfutures.com/",logo:"MFF",grad:"linear-gradient(135deg,#d4af37,#8a6d1f)",ribbon:"Evaluation",award:null,rating:4.0,tagline:"Daily payouts on Rapid, no activation fees",chev:{price:{value:"$92",orig:"$153",meta:"$50K Eval",label:"True Funding Fee"},split:{value:"80\u201390%",meta:"To Trader",label:"Profit Split"},save:{value:"40%",meta:"Save up to",label:"Limited Time Offer"}},promo:"40% Off Builder 50K \u00b7 Use Promo Code: <span class='promo-code-pill'>BUILDER</span>",tags:["eval","fiveplus","news","noconsistency"],sortPrice:92,sortSave:40,pros:["Daily payouts on Rapid \u2014 request every 24 hours, most approved instantly","90% / 10% split on Rapid, the best at the firm","No activation fees on any plan \u2014 ever","Up to $100,000 in payouts per user on Pro","End-of-day trailing drawdown on every evaluation","Four genuinely different plans: Flex, Pro, Rapid, Builder"],cons:["Rapid\u2019s funded drawdown trails intraday \u2014 far less forgiving than EOD","Tier-1 news trading blocked on Rapid &amp; Pro sim funded accounts","50% consistency rule in every evaluation except Builder","Flex payouts cap at $1,000\u2013$2,000 per cycle; Builder at $2,000","Hedging prohibited \u2014 including mini vs. micro on the same underlying"],verdict:"MFF's Rapid plan is the standout \u2014 90/10 split with daily payouts and zero activation fees. Just mind the intraday funded drawdown and news limits on Rapid/Pro.",platforms:{count:7,sample:["Tradovate","TradingView","NinjaTrader","Quantower","Volumetrica"]},allowed:["Futures","4 Plan Types","Daily Payouts (Rapid)"],watch:[["\u26a0","News Blocked (Rapid/Pro)","caution"],["\ud83d\uded1","No Hedging","danger"],["\u26a0","50% Consistency","caution"]],cmp:{fee:"<span class='cmp-orig'>$153</span><span class='cmp-sale'>$92</span>",split:"80%\u201390% (Rapid 90%)",payout:"Daily (Rapid)",payoutFreq:"Every 24h (Rapid)",processing:"\u2039VERIFY\u203a",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD Trailing (eval)",dailyLoss:"\u2039VERIFY\u203a",consistency:"50% (except Builder)",maxAcc:"\u2039VERIFY\u203a",sizes:"$25k\u2013$150k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"None",news:"Limited (blocked on Rapid/Pro)",bots:"\u2039VERIFY\u203a",copy:"\u2039VERIFY\u203a",weekend:"<span class='cmp-no'>No</span>",refund:"<span class='cmp-no'>No</span>",platforms:"7",score:"4.0"},richTabs:true,fullPage:"/prop-firm/my-funded-futures/"},
 {id:"topone",rank:15,name:"Top One Futures",link:"/prop-firm/top-one-futures/",affiliate:"https://toponefutures.com/?linkId=lp_707970&amp;sourceId=cpf&amp;tenantId=toponefutures",logo:"TOF",grad:"linear-gradient(135deg,#10b981,#065f46)",ribbon:"Instant Funding",award:null,rating:4.0,tagline:"Six account types, payouts under 4 hours",chev:{price:{value:"$376",orig:"$939",meta:"$150K Instant",label:"True Funding Fee"},split:{value:"90%",meta:"To Trader",label:"Profit Split"},save:{value:"60%",meta:"Save up to",label:"Limited Time Offer"}},promo:"Instant + Eval Offers \u00b7 Use Promo Code: <span class='promo-code-pill'>5WK4X64N</span>",tags:["instant","fiveplus","news"],sortPrice:376,sortSave:60,pros:["Flat 90% / 10% split on every plan \u2014 not just one","Six account types covering both instant funding and evaluations","Payouts processed in under 4 hours on average via Rise","$25M+ in verified payouts; 4.8 Trustpilot from 3,300+ reviews","News trading allowed on most plans","EOD trailing drawdown on every plan except S2F Sim PRO"],cons:["No bots or automated trading \u2014 manual or semi-manual only, on any plan","$149 activation fee on Elite Challenge &amp; Elite Access funding","S2F Sim PRO uses intraday trailing drawdown plus the strict ESS gate","Trading from a restricted country is a hard breach \u2014 even while travelling","14-day inactivity rule (incl. weekends) breaches accounts permanently","Only three platforms \u2014 Tradovate, NinjaTrader &amp; TradingView"],verdict:"Top One offers six account types across instant and evaluation, a flat 90/10 split, and sub-4-hour payouts. No bots, and restricted-country trading is a hard breach.",platforms:{count:3,sample:["Tradovate","NinjaTrader","TradingView"]},allowed:["Futures","News Trading","Instant & Eval","6 Account Types"],watch:[["\u26a0","No Bots / Automation","caution"],["\u26a0","$149 Activation (Elite)","caution"],["\ud83d\uded1","Restricted-Country Breach","danger"]],cmp:{fee:"<span class='cmp-orig'>$939</span><span class='cmp-sale'>$376</span>",split:"90% / 10%",payout:"Under 4 hrs (avg)",payoutFreq:"\u2039VERIFY\u203a",processing:"<4 hrs via Rise",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD Trailing (most)",dailyLoss:"\u2039VERIFY\u203a",consistency:"15%\u201340% (by plan)",maxAcc:"\u2039VERIFY\u203a",sizes:"$25k\u2013$150k",minDays:"\u2039VERIFY\u203a",resets:"\u2039VERIFY\u203a",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-yes'>Yes</span>",actFee:"$149 (Elite Challenge/Access)",news:"<span class='cmp-yes'>Yes (most)</span>",bots:"<span class='cmp-no'>No</span>",copy:"\u2039VERIFY\u203a",weekend:"<span class='cmp-no'>No</span>",refund:"<span class='cmp-no'>No</span>",platforms:"3",score:"4.0"},richTabs:true,fullPage:"/prop-firm/top-one-futures/"},
 {id:"apex",rank:12,name:"Apex Trader Funding",link:"/prop-firm/apex-trader-funding/",affiliate:"https://apextraderfunding.com/",logo:"APX",grad:"linear-gradient(135deg,#f59e0b,#b45309)",ribbon:"Evaluation",award:null,rating:4.5,tagline:"100% profit split, one-step eval",chev:{price:{value:"$19.90",orig:"$199",meta:"$25K Eval",label:"True Funding Fee"},split:{value:"100%",meta:"To Trader",label:"Profit Split"},save:{value:"90%",meta:"Save up to",label:"Limited Time Offer"}},promo:"90% Off All Evals \u00b7 Use Promo Code: <span class='promo-code-pill'>SAVENOW</span>",tags:["eval","fiveplus","news"],sortPrice:20,sortSave:90,pros:["100% profit split \u2014 Apex takes no cut of PA profits","One-step evaluation; pass in as little as one trading day","No reset fees \u2014 a breach simply means buying a new evaluation","Run up to 20 PA accounts at once","Two drawdown styles: Intraday (no daily limit) or End-of-Day","Payouts after 5 trading days, $500 minimum, up to weekly"],cons:["Bots and automation are not allowed \u2014 manual trading only","Hedging is not permitted (directional trades only)","Balance must reach the Safety Net (max drawdown + $100) before any payout","50% consistency rule applies on the funded PA account","Standard pricing adds a PA activation fee, paid when you get funded"],verdict:"Apex is the value play for one-step funding \u2014 100% profit split and up to 20 PA accounts. Best for manual traders; bots and hedging are off the table.",platforms:{count:7,sample:["Tradovate","Rithmic","NinjaTrader","TradingView","Quantower"]},allowed:["Futures","One-Step Eval","Up to 20 Accounts"],watch:[["\u26a0","No Bots / Automation","caution"],["\ud83d\uded1","No Hedging","danger"],["\u26a0","50% Consistency (PA)","caution"]],cmp:{fee:"<span class='cmp-orig'>$199</span><span class='cmp-sale'>$19.90</span>",split:"100% / 0%",payout:"5+ trading days",payoutFreq:"Up to weekly",processing:"\u2039VERIFY\u203a",minPayout:"$500",drawdown:"Intraday or EOD",dailyLoss:"None (Intraday)",consistency:"50% (PA)",maxAcc:"20 accounts",sizes:"$25k\u2013$300k",minDays:"1 day",resets:"Buy new eval",scaling:"\u2039VERIFY\u203a",instant:"<span class='cmp-no'>No</span>",actFee:"On funded (std)",news:"\u2039VERIFY\u203a",bots:"<span class='cmp-no'>No</span>",copy:"\u2039VERIFY\u203a",weekend:"<span class='cmp-no'>No</span>",refund:"<span class='cmp-no'>No</span>",platforms:"7",score:"4.5"},richTabs:true,fullPage:"/prop-firm/apex-trader-funding/"},
 {id:"blusky",rank:13,name:"BluSky Trading Company",link:"/prop-firm/blusky-trading-company/",affiliate:"https://trader.blusky.pro/sign-up?referral_id=CPF",logo:"BSK",grad:"linear-gradient(135deg,#3b82f6,#1e3a8a)",ribbon:"Instant Funding",award:null,rating:4.2,tagline:"Daily payouts, instant funding option",chev:{price:{value:"$29.50",orig:"$59",meta:"$50K Eval",label:"True Funding Fee"},split:{value:"90%",meta:"To Trader",label:"Profit Split"},save:{value:"50%",meta:"Save up to",label:"Limited Time Offer"}},promo:"Save 20\u201350% Off \u00b7 Use Promo Code: <span class='promo-code-pill'>WELCOME26</span>",tags:["eval","instant","news"],sortPrice:30,sortSave:50,pros:["Keep 90% of profits on evaluation accounts (80% on Instant)","Daily payouts Monday\u2013Friday \u2014 same business day if requested before 11 AM ET","Three evaluation modes by speed: Launch (2-day), Propel (3-day), Orbit (1-day)","Instant funding ($50K Instant and $3.5K Direct 2 Funded) \u2014 no evaluation","Path to a real Live Brokerage account once a funded account clears $10K profit","News trading, bots/automation, and scalping allowed"],cons:["Consistency rules vary by mode (21% on Instant up to 50% on the Launch evaluation)","Instant accounts are an 80/20 split, not 90/10","One-time funding fee on Launch evaluations","Per-request payouts are capped weekly (e.g., $2,500 at 50K)","Up to 3 funded accounts (fewer than some competitors)"],verdict:"BluSky blends fast evaluations with an instant-funding option and daily payouts. Watch the lower 80/20 split on Instant and the per-mode consistency rules.",platforms:{count:8,sample:["Tradovate","Rithmic","NinjaTrader","Quantower","Sierra Chart"]},allowed:["Futures","News Trading","Bots","Scalping","Instant Funding"],watch:[["\u26a0","Instant = 80/20 Split","caution"],["\u26a0","Consistency 21\u201350%","caution"],["\u26a0","Max 3 Funded","caution"]],cmp:{fee:"<span class='cmp-orig'>$59</span><span class='cmp-sale'>$29.50</span>",split:"90% / 10% (Eval)",payout:"Daily (Mon\u2013Fri)",payoutFreq:"Daily, same-day if before 11am ET",processing:"Same day",minPayout:"\u2039VERIFY\u203a",drawdown:"EOD (Eval)",dailyLoss:"\u2039VERIFY\u203a",consistency:"21%\u201350% (by mode)",maxAcc:"3 funded",sizes:"$50k (+ $3.5k D2F)",minDays:"1\u20133 days (by mode)",resets:"\u2039VERIFY\u203a",scaling:"Live Brokerage at $10k profit",instant:"<span class='cmp-yes'>Yes</span>",actFee:"One-time (Launch eval)",news:"<span class='cmp-yes'>Yes</span>",bots:"<span class='cmp-yes'>Yes</span>",copy:"\u2039VERIFY\u203a",weekend:"<span class='cmp-no'>No</span>",refund:"<span class='cmp-no'>No</span>",platforms:"8",score:"4.2"},richTabs:true,fullPage:"/prop-firm/blusky-trading-company/"},
@@ -1173,7 +1170,7 @@ const FIRMS = [
       save:  { value:"36%", meta:"Save up to", label:"Limited Time Offer" }
     },
     promo: "June Sale Ends 6/30/26 · Use Promo Code: <span class='promo-code-pill'>CORE200</span>",
-    tags: ["core","eval","instant","news","tradovate"],
+    tags: ["core","eval","instant","news","tradovate","noconsistency"],
     sortPrice: 349, sortSave: 36,
     quickFacts: [
       { label:"Account Types", value:"Instant Funded", sub:"Direct only" },
@@ -1408,7 +1405,7 @@ const FIRMS = [
       save:  { value:"50%", meta:"Save up to", label:"All Plans" }
     },
     promo: "50% Off All Plans \u2014 Limited Time \u00b7 Code: <span class='promo-code-pill'>TDNEW</span>",
-    tags: ["core","eval","fiveplus","noeval","tradovate"], sortPrice: 62, sortSave: 50,
+    tags: ["core","eval","fiveplus","noeval","tradovate","noconsistency"], sortPrice: 62, sortSave: 50,
     quickFacts: [
       { label:"Products", value:"Quick Pay / Fast Pass", sub:"TradeDay 2.0" },
       { label:"Profit Split", value:"80% → 90% Live", sub:"50/50 below $4k" },
@@ -1437,7 +1434,7 @@ const FIRMS = [
       save:  { value:"35%", meta:"Save up to", label:"June Sale" }
     },
     promo: "June Sale Ends 6/30/26 \u00b7 Code: <span class='promo-code-pill'>NOFEE30</span>",
-    tags: ["core","eval","fiveplus","noeval","tradovate"], sortPrice: 119, sortSave: 35,
+    tags: ["core","eval","fiveplus","noeval","tradovate","noconsistency"], sortPrice: 119, sortSave: 35,
     quickFacts: [
       { label:"Product", value:"Single", sub:"Test \u2192 PRO \u2192 PRO+" },
       { label:"Profit Split", value:"80% → 90%", sub:"PRO \u2192 PRO+" },
@@ -2065,20 +2062,23 @@ document.querySelectorAll('#detail-seg .seg-btn').forEach(b=>{
 
 /* ----- filters (pills act as navigation; click an active pill to clear) ----- */
 let activeFilter='core';
-const NAV_ONLY = ['midtier','donottrade']; // separate category pages on the live site
+const NAV_ONLY = ['midtier','donottrade'];
+const FILTER_TITLES={core:'Best Prop Firms Offers',eval:'Best 1-Step Evaluation Prop Firms',instant:'Best Instant Funding Prop Firms',fiveplus:'Prop Firms Allowing 5+ Trading Accounts',split100:'100% Profit Split & Bonus Offers',news:'Best Prop Firms for News Trading',noconsistency:'Best Prop Firms With No Funded Consistency'};var _titleEl=document.querySelector('h1.pf-title');var _origTitle=_titleEl?_titleEl.textContent:'';function setFilterTitle(f){if(_titleEl){_titleEl.textContent=(f==='core'||!FILTER_TITLES[f])?_origTitle:FILTER_TITLES[f];}} // separate category pages on the live site
 document.querySelectorAll('.filter-pill').forEach(p=>{
   p.addEventListener('click', ()=>{
     const f = p.dataset.filter;
-    if(activeFilter === f){ activeFilter = 'core'; p.classList.remove('active'); }
+    if(activeFilter === f){ activeFilter = 'core'; p.classList.remove('active'); setFilterTitle('core'); }
     else {
       document.querySelectorAll('.filter-pill').forEach(x=>x.classList.remove('active'));
-      p.classList.add('active'); activeFilter = f;
+      p.classList.add('active'); activeFilter = f; setFilterTitle(f);
     }
     applyView();
   });
 });
+(function(){var ap=document.querySelector('.filter-pill[data-filter=\"'+activeFilter+'\"]');if(ap)ap.classList.add('active');})();
 
 function applyView(){
+  setFilterTitle(activeFilter);
   let firms = FIRMS.filter(f => activeFilter==='all' || f.tags.includes(activeFilter));
   firms = [...firms].sort((a,b)=>a.rank-b.rank);
   renderList(firms);

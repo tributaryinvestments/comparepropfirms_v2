@@ -1,68 +1,60 @@
 # ComparePropFirms — Build-to-Sunday Checklist
 
-**Status (Sun 14 Jun, reconciled):** repo **pushed & current** — `origin/main` @ `067449a` is byte-identical to the working tree (139 site files, 0 diff). Clean chrome ✅ · 15 firm review pages ✅ · 8 category pages w/ 15-firm catalog + filters ✅ · news hub `/articles/` (19 posts) ✅ · affiliate CTAs on all 15 ✅ · homepage guide cards linked ✅ · rich 4-tab snapshots on all 15 ✅ · internal link audit clean ✅ · **all 15 firms' comparison data now built & filled** (weekend=No, promo fees, refund=No everywhere) ✅ · 19/19 jsdom-clean ✅.
+**Status (Sun 14 Jun, late):** repo pushed & current through prior work. Since then, in the working copy (NOT yet pushed): homepage bugs fixed, preview table refreshed, SEO meta added to the 4 new firms, weekend rows added to MFF/Top One, sitemap updated, Apex logos standardized. 19/19 jsdom-clean.
 
-> **One push pending:** today's edits (new-firm refund=No, Alpha/Lucid weekend rules-tab fix, Apex page replace) are in the working copy + zip but **not yet pushed**. Commit → **Push origin** in GitHub Desktop.
+> **One push pending** — today's batch is in the zip, not on `origin`. Commit → **Push origin** in GitHub Desktop.
 
 ---
 
-## 1. BUILD — pages  (DONE)
-- [x] best-prop-firms flagship + 7 sub-categories
-- [x] Catalog = 15 firms in shared `FIRMS`; filter membership matches screenshots
-- [x] 15 firm review pages `/prop-firm/<slug>/`
-- [x] News hub `/articles/` — 19 WP posts at exact URLs
-- [x] Homepage "Explore Our Latest Guides" → real articles
-- [x] Rich 4-tab snapshots on all 15
-- [x] Crypto / Options / Forex header links → live site, new tab, WP-served
+## 1. BUILD — pages (DONE)
+- [x] Flagship + 7 sub-categories · 15 firm review pages · news hub (19 posts) · homepage · rich 4-tab snapshots
 
-## 2. COMPARISON DATA — (DONE since last edit)
-- [x] **Built `cmp` from scratch for the 7 original firms that were blank** (alpha, fundednext, bulenox, daytraders, ffn, tradeday, tpt) — parsed each page's `ACCOUNT_DATA`/`CARD_DATA`
-- [x] Filled with your confirmed values; **0 `‹VERIFY›` left** on those 7
-- [x] **weekend = No across all 15** (no futures firm holds over weekend)
-- [x] **refund = No across all 15** (incl. the 4 new firms, just resolved)
-- [x] Fees = your **promo prices** (Alpha $59.25/mo, Bulenox $19.25/mo, TPT $102/mo, FundedNext $79.99, DayTraders $30, FFN $75/mo, TradeDay $62/mo)
-- [x] **Weekend rules-tab consistency** fixed on Alpha + Lucid review pages (were "Allowed"; now "Not Allowed"). Bulenox verified already correct.
-- [x] Apex review page replaced with your new version — all links/affiliate/compare preserved
+## 2. COMPARISON DATA (DONE)
+- [x] All 15 firms' `cmp` built & filled; weekend=No and refund=No across all 15; promo fees
+- [x] Weekend rules-tab consistency on all review pages (Alpha/Lucid fixed; MFF/Top One rows added)
 
-## 3. WIRE — make it work + go live  (OPEN)
-- [x] "Get Funded" affiliate CTAs on all 15 + cards; FundedNext on `jered18`
-- [x] Real firm logos in `/cpf-logos/`
-- [x] Internal link audit — 0 broken
-- [ ] **Push today's edits** (see banner)
-- [ ] `routes.json` — flip built category + firm + article paths `wordpress` → `pages`
-- [ ] Verify on **cpfv2.pages.dev**, then live domain
-- [ ] **Footer `#` links** — 4 social + footer nav → real URLs (fix once in footer partial)
-- [ ] **Normalize the 4 new firm pages** (apex, blusky, mff, topone) to shared `/assets/` chrome — still self-contained inline CSS/JS
+## 3. HOMEPAGE (DONE tonight)
+- [x] **"Browse by what matters" fixed** — 6 category tiles had malformed anchors (`href="…"<div>`); now render correctly
+- [x] **"Compare Any Two Firms" fixed** — both dropdowns now list all 15 firms; "Compare Now" launches the real tool (`/category/best-prop-firms/?compare=id1,id2`); validates two distinct firms
+- [x] **Preview table refreshed** — Take Profit column now matches our data ($102/mo, 80–90%, 1 Day, $750K, 50%)
 
-## 4. SEO + quality  (OPEN — gap concentrated on the 4 new firms)
-- [x] Unique `<title>` per page
-- [x] canonical + meta description + OG tags — **on 11 originals + category pages**
-- [ ] **canonical / meta description / OG MISSING on the 4 new self-contained pages** (apex, blusky, mff, topone) — add to match the other 11
-- [ ] **Favicon + apple-touch-icon** — currently on 0 pages
-- [ ] `sitemap.xml` + `robots.txt` exist — **update to include the new/migrated pages** (verify coverage)
+## 3b. CATEGORY PILLS + TITLES (DONE)
+- [x] **7 pills** across all 8 category pages: Best Futures Firms / 1 Step Evaluations / Instant Funding / 5+ Accounts / 100% Profit Split / Trade News / No Funded Consistency
+- [x] **Dynamic title** — H1 updates live when switching pills, reverts to each page's authored title on reset
+- [x] **No Funded Consistency** filter tagged: purdia, tradeday, tpt, mff (first-party None/0% funded consistency). *Topstep (consistency on one account type only) and FFN (unconfirmed) left untagged — confirm if you want them in.*
+- [x] **Menu rename** "No Evaluation / Funding Fee" -> "No Funding Fees" (menu + page H1 + <title>, 92 instances/44 files; URL slug untouched)
+
+## 4. APEX (DONE)
+- [x] New page swapped in, all links/affiliate/compare preserved
+- [x] Similar-firm logos standardized to `/cpf-logos/` paths (platform icons + Apex's own logo stay embedded)
+- [x] No affiliate link needed (bare apextraderfunding.com is intended)
+
+## 5. SEO + quality
+- [x] **canonical + meta description + OG/Twitter on ALL 15 firms + category + homepage** (4 new firms added tonight, descriptions written from first-party page text; shared `/assets/og-default.png`)
+- [x] Unique `<title>` per page · 19/19 jsdom-clean
+- [x] **sitemap.xml** now covers all 15 firms (added apex, blusky, mff, topone) — 47 URLs, well-formed
+- [x] **Favicons** — full set wired sitewide (74 pages): .ico, .svg, 96px, apple-touch (180), PWA 192/512, site.webmanifest (name set to ComparePropFirms.com)
 - [ ] Mobile QA at 390px per page type
-- [ ] Analytics (GA4 / GTM) — one snippet in chrome
-- [ ] Press bar "As featured in" — real assets vs placeholders
-- [ ] 3 low-res hero images — replacements at same filenames
+- [ ] Analytics (GA4 / GTM) snippet in chrome
+- [x] **Press bar logos** — PBS/Forbes/USA TODAY/Norton processed to clean transparent muted-grey PNGs; replaced text wordmarks on 8 category pages + homepage (Forbes/PBS). *Forbes file was near-black-on-black — usable but slightly grainy; a cleaner Forbes asset would sharpen it.*
+- [ ] 3 low-res hero image swaps
 
-## 5. OPEN DATA — `‹VERIFY›` cells (4 NEW firms only; you resolve, I clear)
-*weekend + refund now resolved for all — counts below are what remains.*
+## 6. GO-LIVE WIRING
+- [ ] **Push tonight's batch**
+- [ ] **routes.json flip** — 0/111 flipped (all still `wordpress`). Ready to flip: 15 firm pages, homepage, /articles/ + posts, legal. **Gated on:** (a) you verifying cpfv2.pages.dev, (b) the 4 new firms' `‹VERIFY›` data — flipping the 8 category pages before that puts placeholders live in the compare tool. I generate the flipped file on your go.
+- [ ] **Footer `#` links** — 4 social + footer nav need real URLs (give me the URLs)
+- [ ] Verify cpfv2.pages.dev → live domain
+- [ ] **Normalize 4 new pages to shared `/assets/` chrome** — DEFER to post-launch (risky; they're self-contained and render fine; header/footer are visually consistent)
+
+## 7. OPEN DATA — `‹VERIFY›` (4 new firms; you resolve, I clear)
 - [ ] **Apex (4):** processing, scaling, news, copy
 - [ ] **BluSky (4):** min payout, daily loss, resets, copy
 - [ ] **MFF (9):** processing, min payout, daily loss, max accounts, min days, resets, scaling, bots, copy
 - [ ] **Top One (8):** payout frequency, min payout, daily loss, max accounts, min days, resets, scaling, copy
-- [ ] **MFF + Top One** also missing a Weekend Holding row in their rules tab (structural)
-- *Note:* **copy trading** is `‹VERIFY›` on all 4 — you can answer once for all four.
+- *copy trading is open on all 4 — answer once for all.*
 
-## 6. KLAVIYO — homepage signup
-Needs from you: **Public API Key** (6-char site ID) · **List ID** · **double opt-in yes/no.** Then the form gets wired.
+## 8. KLAVIYO
+- [ ] Public API Key (6-char site ID) · List ID · double-opt-in yes/no → then I wire the homepage form
 
-## 7. LAUNCH — Sunday
-- [ ] Final push · flip `routes.json` to `pages` · smoke test each live URL (desktop + mobile) · confirm WP still serves un-migrated paths · spot-check 2–3 data points per firm vs live firm sites
-
-## 8. POST-LAUNCH backlog
-- [ ] Per-size pricing matrix in Accounts tab for non-Tradeify firms
-- [ ] Lean static crypto/options/forex pages (currently WP)
-- [ ] Streaming/analytics (separate): Apps Script TradingView webhook → new deployment URL
-
-> **Decision needed:** main `/category/best-prop-firms/` defaults to `core` (original 11). Tag the new 4 `core` to surface them on the default flagship view? Your call.
+## 9. POST-LAUNCH backlog
+- [ ] Chrome normalization of 4 new pages · per-size pricing matrix (non-Tradeify) · static crypto/options/forex pages · Apps Script webhook URL update
