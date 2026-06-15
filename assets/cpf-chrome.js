@@ -81,7 +81,7 @@
 
 /* ---- Footer email subscribe -> Klaviyo (public key + single-opt-in list) ---- */
 (function(){
-  var PUBLIC = "WU7kHX", LIST = "XjQSvh", REV = "2025-07-15";
+  var PUBLIC = "WU7kHX", LIST = "XjQSvh", REV = "2025-10-15";
   function emailOk(e){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e); }
   function wire(){
     var btn = document.querySelector('.foot-subscribe'),
