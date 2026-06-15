@@ -5367,6 +5367,7 @@
     const rows = (phaseState === 'funded') ? FUNDED_ROWS : EVAL_ROWS;
     const statsEl = card.querySelector('.ac-stats');
     if (statsEl) statsEl.innerHTML = buildStatRows(rows, merged);
+    const desc=card.querySelector('[data-cmp-desc]'); if(desc) desc.textContent=(PAYOUT_INFO[subtype]||{}).desc || '';
     const cta=card.querySelector('[data-cmp-cta]'); if(cta) cta.textContent='View '+(cd.name||'Details')+' \u2192';
   }
   function rerenderAllAccountCards(){
