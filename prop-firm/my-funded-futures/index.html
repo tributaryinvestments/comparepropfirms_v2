@@ -3114,7 +3114,26 @@
   .cd-pricing-toggle { display:flex; gap:6px; margin-top:8px; }
   .cd-price-btn { flex:0 0 auto; padding:6px 16px; border:1px solid var(--border,#cbd5e1); background:var(--surface,#fff); color:var(--text,#0f172a); border-radius:999px; font-size:12px; font-weight:700; cursor:pointer; transition:all .15s; white-space:nowrap; }
   .cd-price-btn.active { background:var(--blue); color:#fff; border-color:var(--blue); }
-.hero-logo{overflow:hidden!important;}.hero-logo>img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}/*cpf-hero-logo-fix*/</style>
+.hero-logo{overflow:hidden!important;}.hero-logo>img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}/*cpf-hero-logo-fix*/
+  /* ---- mobile: default to full Comparison View, hide the view toggle (R3) ---- */
+  @media (max-width: 760px) {
+    .view-toggle { display: none !important; }
+    #view-card { display: none !important; }
+    #view-comparison { display: block !important; }
+    /* Reveal the Eval/Funded phase toggle on mobile: it's only shown by JS on a
+       view-toggle click, which no longer happens since that toggle is hidden. */
+    .accounts-head .phase-toggle-row { display: flex !important; }
+    /* Keep the comparison card within the viewport on mobile: 1fr defaults to
+       minmax(auto,1fr), so long "/mo" sale prices force the 4 size pills — and
+       thus the whole card — wider than the screen. minmax(0,1fr) lets them shrink. */
+    #view-comparison .account-card { min-width: 0; }
+    #view-comparison .ac-sizes { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; padding-left: 14px; padding-right: 14px; }
+    #view-comparison .ac-size { padding: 8px 2px; }
+    #view-comparison .ac-size-price { font-size: 10px; }
+    #view-comparison .ac-size-price .price-orig,
+    #view-comparison .ac-size-price .price-sale { display: block; margin: 0; line-height: 1.25; }
+  }
+</style>
 </head>
 <body>
 
