@@ -109,3 +109,22 @@
   if(document.readyState !== 'loading') wire();
   else document.addEventListener('DOMContentLoaded', wire);
 })();
+
+
+/* ===== Scroll reveal (shared) — articles rely on this; ported from homepage =====
+   Without this, .reveal elements (incl. the article hero) stay opacity:0 forever. */
+(function(){
+  function revealInit(){
+    var els = document.querySelectorAll('.reveal');
+    if(!els.length) return;
+    if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(function(el){ el.classList.add('in'); }); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+  if(document.readyState !== 'loading') revealInit();
+  else document.addEventListener('DOMContentLoaded', revealInit);
+})();
