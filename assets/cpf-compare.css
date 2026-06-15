@@ -58,3 +58,14 @@
   .cmp-table { display: block; overflow-x: auto; }
   .compare-inner { flex-wrap: wrap; }
 }
+
+/* --- overlay/full-page toggle (relocated to shared so it styles on the homepage too) --- */
+.seg { display: inline-flex; background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 3px; gap: 2px; }
+.seg-btn { border: none; background: none; cursor: pointer; font-family: var(--sans); font-size: 12.5px; font-weight: 700; color: var(--gray-500); padding: 6px 14px; border-radius: 7px; transition: all .15s; }
+.seg-btn.active { background: var(--blue); color: #fff; }
+.seg-btn:hover { color: var(--text); }
+/* --- firm logos fill their box in overlay + full-page comparison --- */
+.cmp-firm-logo { padding: 0 !important; overflow: hidden; }
+.cmp-firm-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; display: block; }
+.mini-logo { overflow: hidden; }
+.mini-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }

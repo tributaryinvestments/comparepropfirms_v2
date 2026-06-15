@@ -689,7 +689,7 @@
         <h1>Level the <span class="hl">playing field</span> for traders.</h1>
         <p>Compare Prop Firms is a trusted resource built to give traders quick, honest access to the best deals from top firms. We handle the heavy lifting — reviews, comparisons, and audits — so you can choose a firm with confidence, any day of the year.</p>
         <div class="hero-cta">
-          <a class="btn-primary" href="#">Explore Top Firms →</a>
+          <a class="btn-primary" href="/category/best-prop-firms/">Explore Top Firms →</a>
           <a class="btn-link" href="#rank">See how we rank →</a>
         </div>
       </div>
@@ -904,12 +904,7 @@
 <!-- ============ TRUSTED / FEATURED ============ -->
 <section class="wrap section trusted reveal" style="border-top:1px solid var(--border);">
   <div class="flabel">Trusted by traders &middot; As featured in</div>
-  <div class="logos">
-    <span class="flogo">&#9673; PBS</span>
-    <span class="flogo serif">Forbes</span>
-    <span class="flogo">USA TODAY</span>
-    <span class="flogo">&#10003; Norton<small>SECURED</small></span>
-  </div>
+  <div class="logos"><img class="flogo-img" src="/assets/press/pbs.png" alt="PBS" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;vertical-align:middle"><img class="flogo-img" src="/assets/press/forbes.png" alt="Forbes" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;vertical-align:middle"><img class="flogo-img" src="/assets/press/usatoday.png" alt="USA TODAY" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;vertical-align:middle"><img class="flogo-img" src="/assets/press/norton.png" alt="Norton" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;vertical-align:middle"></div>
 </section>
 
 <!-- ============ OUR PROMISE (redesigned) ============ -->
@@ -966,7 +961,7 @@
         <label for="cf-msg">Messages</label>
         <textarea id="cf-msg" placeholder="Describe what you want to ask…"></textarea>
       </div>
-      <button class="btn-primary" type="button">Submit</button>
+      <button class="btn-primary" type="button" id="cf-submit">Submit</button>
     </div>
   </div>
 </section>
@@ -978,7 +973,7 @@
       <h2>You focus on trading.<br>We&rsquo;ll handle the research.</h2>
       <p>Compare the top prop firms side by side and find your edge.</p>
     </div>
-    <a class="btn-primary" href="#">Explore Top Firms →</a>
+    <a class="btn-primary" href="/category/best-prop-firms/">Explore Top Firms →</a>
     <div class="cta-chart" aria-hidden="true">
       <svg viewBox="0 0 230 116" xmlns="http://www.w3.org/2000/svg">
         <rect x="0"   y="74" width="24" height="42"  rx="3" fill="#ffffff"/>
@@ -1120,5 +1115,22 @@
 
 
 <script src="/assets/cpf-chrome.js"></script>
+<script>
+(function(){
+  function wireCF(){
+    var b=document.getElementById('cf-submit'); if(!b||b.dataset.w)return; b.dataset.w='1';
+    b.addEventListener('click',function(){
+      var n=(document.getElementById('cf-name')||{}).value||'',
+          e=(document.getElementById('cf-email')||{}).value||'',
+          m=(document.getElementById('cf-msg')||{}).value||'';
+      if(!n.trim()||!e.trim()||!m.trim()){alert('Please fill in your name, email, and message.');return;}
+      var subj=encodeURIComponent('Contact form — '+n),
+          body=encodeURIComponent(m+'\n\n— '+n+' ('+e+')');
+      window.location.href='mailto:support@comparepropfirms.com?subject='+subj+'&body='+body;
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wireCF);else wireCF();
+})();
+</script>
 </body>
 </html>

@@ -928,8 +928,8 @@
 <div class="cmp-fullpage" id="cmp-fullpage">
   <div class="cmp-fp-bar">
     <div class="cmp-fp-bar-inner">
-      <button class="cmp-back" id="cmp-fp-close">← Back to all firms</button>
-      <button class="nav-cta" type="button" data-open-compare>Compare Firms</button>
+      <button class="cmp-back" id="cmp-fp-close">← Back</button>
+      <button class="nav-cta" type="button" data-open-compare><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:6px"><rect x="3" y="4" width="7" height="16" rx="1"></rect><rect x="14" y="4" width="7" height="16" rx="1"></rect></svg>Compare Firms</button>
     </div>
   </div>
   <div class="cmp-fp-inner">
@@ -2077,7 +2077,7 @@ document.querySelectorAll('.filter-pill').forEach(p=>{
     applyView();
   });
 });
-(function(){var ap=document.querySelector('.filter-pill[data-filter=\"'+activeFilter+'\"]');if(ap)ap.classList.add('active');})();
+(function(){var fp=new URLSearchParams(window.location.search).get('filter');if(fp)activeFilter=fp;})();(function(){var ap=document.querySelector('.filter-pill[data-filter=\"'+activeFilter+'\"]');if(ap)ap.classList.add('active');})();
 
 function applyView(){
   setFilterTitle(activeFilter);
