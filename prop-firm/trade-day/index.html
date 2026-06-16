@@ -2308,6 +2308,7 @@
     flex-shrink: 0;
     letter-spacing: 0.04em;
   }
+  .similar-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .similar-logo.topstep { background: #1f2937; }
   .similar-logo.apex { background: linear-gradient(135deg, #d97706, #b45309); }
   .similar-logo.tpt { background: linear-gradient(135deg, #0d9488, #115e59); }
@@ -2684,7 +2685,7 @@
   /* Quick facts grid */
   .quickfacts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1px;
     background: var(--border);
     border-radius: 14px; overflow: hidden;
@@ -3414,23 +3415,33 @@
       <div class="quickfacts">
         <div class="qf-cell">
           <div class="qf-label">Account Types</div>
-          <div class="qf-value">Quick Pay / Fast Pass</div>
-          <div class="qf-sub">3 variants per size</div>
+          <div class="qf-value">Evaluations</div>
+          <div class="qf-sub">3 account paths</div>
+        </div>
+        <div class="qf-cell">
+          <div class="qf-label">Days to Payout</div>
+          <div class="qf-value">1–5 Days</div>
+          <div class="qf-sub">Day 1 on Quick Pay</div>
+        </div>
+        <div class="qf-cell">
+          <div class="qf-label">Max Accounts</div>
+          <div class="qf-value">6 Funded</div>
+          <div class="qf-sub">Up to 6</div>
         </div>
         <div class="qf-cell">
           <div class="qf-label">Account Sizes</div>
-          <div class="qf-value">$50k – $150k</div>
-          <div class="qf-sub">Multiple accounts</div>
+          <div class="qf-value">$50K–$150K</div>
+          <div class="qf-sub">3 sizes</div>
         </div>
         <div class="qf-cell">
-          <div class="qf-label">Profit Split</div>
-          <div class="qf-value">80% / 20%</div>
-          <div class="qf-sub">50/50 below $4k · 90/10 on Live</div>
+          <div class="qf-label">Drawdown</div>
+          <div class="qf-value">Intraday &amp; EOD</div>
+          <div class="qf-sub">By SKU</div>
         </div>
         <div class="qf-cell">
-          <div class="qf-label">Min Days to Payout</div>
-          <div class="qf-value">1 day (Quick Pay)</div>
-          <div class="qf-sub">5 profitable (Fast Pass)</div>
+          <div class="qf-label">Consistency</div>
+          <div class="qf-value">30–45%</div>
+          <div class="qf-sub">QP 30% / FP 45% eval</div>
         </div>
       </div>
 

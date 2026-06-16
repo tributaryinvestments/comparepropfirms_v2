@@ -2317,6 +2317,7 @@
     flex-shrink: 0;
     letter-spacing: 0.04em;
   }
+  .similar-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .similar-logo.topstep { background: #1f2937; }
   .similar-logo.apex { background: linear-gradient(135deg, #d97706, #b45309); }
   .similar-logo.tradeify { background: linear-gradient(135deg, #2563eb, #1e3a8a); }
@@ -2693,7 +2694,7 @@
   /* Quick facts grid */
   .quickfacts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1px;
     background: var(--border);
     border-radius: 14px; overflow: hidden;
@@ -3301,23 +3302,33 @@
       <div class="quickfacts">
         <div class="qf-cell">
           <div class="qf-label">Account Types</div>
-          <div class="qf-value">4 Eval Plans</div>
-          <div class="qf-sub">Flex · Pro · Rapid · Builder</div>
+          <div class="qf-value">Evaluations</div>
+          <div class="qf-sub">3 account paths</div>
+        </div>
+        <div class="qf-cell">
+          <div class="qf-label">Days to Payout</div>
+          <div class="qf-value">1–14 Days</div>
+          <div class="qf-sub">24h Rapid → Builder 14d</div>
+        </div>
+        <div class="qf-cell">
+          <div class="qf-label">Max Accounts</div>
+          <div class="qf-value">5 Funded</div>
+          <div class="qf-sub">10 evals</div>
         </div>
         <div class="qf-cell">
           <div class="qf-label">Account Sizes</div>
-          <div class="qf-value">$25k – $150k</div>
-          <div class="qf-sub">Up to 10 evals</div>
+          <div class="qf-value">$25K–$150K</div>
+          <div class="qf-sub">4 sizes</div>
         </div>
         <div class="qf-cell">
-          <div class="qf-label">Profit Split</div>
-          <div class="qf-value">90% / 10%</div>
-          <div class="qf-sub">Rapid (others 80/20)</div>
+          <div class="qf-label">Drawdown</div>
+          <div class="qf-value">Intraday &amp; EOD</div>
+          <div class="qf-sub">Rapid intraday, rest EOD</div>
         </div>
         <div class="qf-cell">
-          <div class="qf-label">Min Days to Payout</div>
-          <div class="qf-value">24 hours</div>
-          <div class="qf-sub">Rapid — daily</div>
+          <div class="qf-label">Consistency</div>
+          <div class="qf-value">0–50%</div>
+          <div class="qf-sub">50% eval / none funded</div>
         </div>
       </div>
 
