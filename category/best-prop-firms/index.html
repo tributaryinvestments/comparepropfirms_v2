@@ -530,7 +530,7 @@
   .sec-link:hover { border-color: var(--blue); background: var(--blue-soft); }
 
   /* --- account / payout comparison cards --- */
-  .compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .compare-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
   .account-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: visible; }
   .account-card.growth { border-top: 4px solid var(--purple); }
   .account-card.select { border-top: 4px solid var(--blue); }
@@ -544,7 +544,7 @@
   .fd-btn { flex: 1; padding: 6px 10px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; font-family: var(--sans); font-size: 11px; font-weight: 700; color: var(--gray-500); cursor: pointer; transition: all .15s; }
   .fd-btn:hover { border-color: var(--blue); color: var(--blue-dark); }
   .fd-btn.active { background: var(--blue-soft); border-color: var(--blue); color: var(--blue-dark); }
-  .ac-sizes { padding: 14px 18px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; border-bottom: 1px solid var(--border); }
+  .ac-sizes { padding: 14px 18px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; border-bottom: 1px solid var(--border); }
   .ac-size { text-align: center; padding: 8px 4px; background: var(--bg-soft); border-radius: 8px; border: 1px solid transparent; min-height: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .ac-size.selected { background: var(--surface); border-color: var(--orange); }
   .ac-size-name { font-weight: 800; font-size: 12px; }
