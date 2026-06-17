@@ -215,6 +215,9 @@
   .field input:focus, .field textarea:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
   .field textarea { min-height: 100px; resize: vertical; }
   .form-card .btn-primary { width: 100%; margin-top: 4px; }
+  .cf-status { margin-top: 12px; font-size: 13.5px; font-weight: 600; line-height: 1.5; }
+  .cf-status.ok { color: var(--green-check, #15803d); }
+  .cf-status.err { color: #dc2626; }
 
   /* ===== CLOSING CTA BAND ===== */
   .cta-band { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--ink) 0%, var(--ink-soft) 100%); }
@@ -953,19 +956,26 @@
     </div>
     <div class="form-card">
       <h3>Contact Form</h3>
-      <div class="field">
-        <label for="cf-name">Full Name</label>
-        <input id="cf-name" type="text" placeholder="Write your full name here…" autocomplete="name">
-      </div>
-      <div class="field">
-        <label for="cf-email">Email Address</label>
-        <input id="cf-email" type="email" placeholder="e.g. yourname@mail.com…" autocomplete="email">
-      </div>
-      <div class="field">
-        <label for="cf-msg">Messages</label>
-        <textarea id="cf-msg" placeholder="Describe what you want to ask…"></textarea>
-      </div>
-      <button class="btn-primary" type="button" id="cf-submit">Submit</button>
+      <form id="cf-form">
+        <input type="hidden" name="access_key" value="7603a31f-8bc0-4a1b-ae00-bea49a1b7c2c">
+        <input type="hidden" name="subject" value="New contact form message — ComparePropFirms">
+        <input type="hidden" name="from_name" value="ComparePropFirms Contact Form">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:0; height:0; opacity:0;">
+        <div class="field">
+          <label for="cf-name">Full Name</label>
+          <input id="cf-name" name="name" type="text" required placeholder="Write your full name here…" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="cf-email">Email Address</label>
+          <input id="cf-email" name="email" type="email" required placeholder="e.g. yourname@mail.com…" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="cf-msg">Messages</label>
+          <textarea id="cf-msg" name="message" required placeholder="Describe what you want to ask…"></textarea>
+        </div>
+        <button class="btn-primary" type="submit" id="cf-submit">Submit</button>
+        <div id="cf-status" class="cf-status" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -1122,15 +1132,28 @@
 <script>
 (function(){
   function wireCF(){
-    var b=document.getElementById('cf-submit'); if(!b||b.dataset.w)return; b.dataset.w='1';
-    b.addEventListener('click',function(){
+    var form=document.getElementById('cf-form'); if(!form||form.dataset.w)return; form.dataset.w='1';
+    var status=document.getElementById('cf-status');
+    var btn=document.getElementById('cf-submit');
+    function setStatus(msg,kind){ if(status){ status.textContent=msg; status.className='cf-status'+(kind?(' '+kind):''); } }
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
       var n=(document.getElementById('cf-name')||{}).value||'',
           e=(document.getElementById('cf-email')||{}).value||'',
           m=(document.getElementById('cf-msg')||{}).value||'';
-      if(!n.trim()||!e.trim()||!m.trim()){alert('Please fill in your name, email, and message.');return;}
-      var subj=encodeURIComponent('Contact form — '+n),
-          body=encodeURIComponent(m+'\n\n— '+n+' ('+e+')');
-      window.location.href='mailto:support@comparepropfirms.com?subject='+subj+'&body='+body;
+      if(!n.trim()||!e.trim()||!m.trim()){ setStatus('Please fill in your name, email, and message.','err'); return; }
+      var data=Object.fromEntries(new FormData(form).entries());
+      setStatus('Sending…','');
+      btn.disabled=true;
+      fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(r){return r.json();}).then(function(j){
+        if(j&&j.success){ form.reset(); setStatus("Thanks — your message has been sent. We'll get back to you shortly.",'ok'); }
+        else { setStatus((j&&j.message)?j.message:'Something went wrong. Please email support@comparepropfirms.com directly.','err'); }
+      }).catch(function(){ setStatus('Network error — please email support@comparepropfirms.com directly.','err'); })
+      .then(function(){ btn.disabled=false; });
     });
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wireCF);else wireCF();
