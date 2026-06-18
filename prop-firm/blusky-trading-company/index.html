@@ -3630,12 +3630,12 @@
             <div class="flex-daily-toggle"></div>
             <div class="phase-banner"></div>
             <div class="ac-sizes ac-sizes-6">
-              <div class="ac-size" data-size="25K"><div class="ac-size-name">$25K</div><div class="ac-size-price"><span class="price-sale">$105/mo</span></div></div>
-              <div class="ac-size selected" data-size="50K"><div class="ac-size-name">$50K</div><div class="ac-size-price"><span class="price-sale">$112/mo</span></div></div>
-              <div class="ac-size" data-size="100K"><div class="ac-size-name">$100K</div><div class="ac-size-price"><span class="price-sale">$154/mo</span></div></div>
-              <div class="ac-size" data-size="150K"><div class="ac-size-name">$150K</div><div class="ac-size-price"><span class="price-sale">$119/mo</span></div></div>
-              <div class="ac-size" data-size="200K"><div class="ac-size-name">$200K</div><div class="ac-size-price"><span class="price-sale">$189/mo</span></div></div>
-              <div class="ac-size" data-size="300K"><div class="ac-size-name">$300K</div><div class="ac-size-price"><span class="price-sale">$224/mo</span></div></div>
+              <div class="ac-size" data-size="25K"><div class="ac-size-name">$25K</div><div class="ac-size-price"><span class="price-orig">$150</span><span class="price-sale">$105/mo</span></div></div>
+              <div class="ac-size selected" data-size="50K"><div class="ac-size-name">$50K</div><div class="ac-size-price"><span class="price-orig">$160</span><span class="price-sale">$112/mo</span></div></div>
+              <div class="ac-size" data-size="100K"><div class="ac-size-name">$100K</div><div class="ac-size-price"><span class="price-orig">$220</span><span class="price-sale">$154/mo</span></div></div>
+              <div class="ac-size" data-size="150K"><div class="ac-size-name">$150K</div><div class="ac-size-price"><span class="price-orig">$170</span><span class="price-sale">$119/mo</span></div></div>
+              <div class="ac-size" data-size="200K"><div class="ac-size-name">$200K</div><div class="ac-size-price"><span class="price-orig">$270</span><span class="price-sale">$189/mo</span></div></div>
+              <div class="ac-size" data-size="300K"><div class="ac-size-name">$300K</div><div class="ac-size-price"><span class="price-orig">$320</span><span class="price-sale">$224/mo</span></div></div>
             </div>
             <div class="ac-stats"></div>
             <a class="ac-cta select" href="https://trader.blusky.pro/sign-up?referral_id=CPF" rel="sponsored noopener">View Propel →</a>
@@ -6626,7 +6626,7 @@ const TAB_CONTENT = {
   // ===== BluSky toggle + comparison engine (additive) =====
   function setFeeExplicit(orig, sale){
     document.querySelectorAll('#view-card [data-cd="fee"]').forEach(function(el){
-      el.innerHTML = '<span class="price-orig">'+orig+'</span><span class="price-sale">'+sale+'</span>';
+      el.innerHTML = (orig === sale) ? '<span class="price-sale">'+sale+'</span>' : '<span class="price-orig">'+orig.replace(/\/mo$/,'')+'</span><span class="price-sale">'+sale+'</span>';
     });
   }
   function dtSizeLabel(type, size){
