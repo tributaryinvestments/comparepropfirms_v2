@@ -535,6 +535,14 @@
   .compare-grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   @media (max-width: 1100px) { .compare-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 560px) { .compare-grid.cols-4 { grid-template-columns: 1fr; } }
+  /* 2-offer firms: center the pair (matches individual pages) instead of left-aligning in a 3-col grid */
+  .compare-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 888px; margin-left: auto; margin-right: auto; }
+  @media (max-width: 560px) { .compare-grid.cols-2 { grid-template-columns: 1fr; } }
+  /* rich view does not show the Standard/No-Activation sub-toggle; hide it (and its spacers) so every card's size row lines up */
+  .firm-expand .ac-pricing-toggle { display: none !important; }
+  /* rich view hid the highlight (lightning) card's stats entirely (showed only a button); show its eval stats so all cards match the individual pages */
+  .firm-expand .compare-grid.phase-eval .account-card.lightning:not(:has(.ac-noeval)) .ac-stats { display: block !important; }
+  .firm-expand .compare-grid.phase-eval .account-card.lightning:not(:has(.ac-noeval)) .stats-funded { display: none !important; }
   .account-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: visible; }
   .account-card.growth { border-top: 4px solid var(--purple); }
   .account-card.select { border-top: 4px solid var(--blue); }
