@@ -6962,5 +6962,27 @@ document.addEventListener("click",function(e){
 });
 </script>
 <script src="/assets/cpf-chrome.js"></script>
+<script>
+/* Tab deep-linking: open the tab named in the URL #fragment on load, and keep the address in sync as tabs are clicked (each tab is bookmarkable/shareable). */
+(function(){
+  function fromHash(){
+    var h=(location.hash||'').replace(/^#/,'').trim();
+    if(!h) return;
+    var btn=document.querySelector('.tab[data-tab="'+h+'"]');
+    if(btn){ btn.click(); var bar=btn.closest('.tabs')||btn; bar.scrollIntoView({behavior:'auto',block:'start'}); }
+  }
+  function wire(){
+    document.addEventListener('click',function(e){
+      var t=e.target&&e.target.closest?e.target.closest('.tab[data-tab]'):null;
+      if(!t) return;
+      var name=t.getAttribute('data-tab');
+      if(name && history.replaceState){ try{ history.replaceState(null,'','#'+name); }catch(_){} }
+    });
+    fromHash();
+    window.addEventListener('hashchange',fromHash);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
+})();
+</script>
 </body>
 </html>
