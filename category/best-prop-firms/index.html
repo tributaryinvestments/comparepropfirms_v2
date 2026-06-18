@@ -531,6 +531,10 @@
 
   /* --- account / payout comparison cards --- */
   .compare-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  /* FundedNext & My Funded Futures have 4 offers: show all 4 (4 -> 2 -> 1), matching their individual pages */
+  .compare-grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1100px) { .compare-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .compare-grid.cols-4 { grid-template-columns: 1fr; } }
   .account-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: visible; }
   .account-card.growth { border-top: 4px solid var(--purple); }
   .account-card.select { border-top: 4px solid var(--blue); }
@@ -1626,7 +1630,7 @@ function rulesTabHTML(f){
 }
 
 function payoutsTabHTML(f){
-  if(f.id!=='tradeify'){ if(window.RICH_DETAIL&&RICH_DETAIL[f.id]&&RICH_DETAIL[f.id].payouts) return RICH_DETAIL[f.id].payouts; return payoutsSnapshot(f); }
+  if(f.id!=='tradeify'){ if(window.RICH_DETAIL&&RICH_DETAIL[f.id]&&RICH_DETAIL[f.id].payouts) return RICH_DETAIL[f.id].payouts.replace(/<div class="sec-head">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/, function(m){ var sub=(m.match(/<div class="sec-subtitle">([\s\S]*?)<\/div>/)||['',''])[1]; return '<div class="ex-panel-head"><div><div class="ex-panel-title">💵 Payouts &amp; Withdrawals</div><div class="ex-panel-sub">'+sub+'</div></div><a class="sec-link" href="'+(f.fullPage||f.link)+'#payouts">Full payout details →</a></div>'; }); return payoutsSnapshot(f); }
   const card = (cls, icon, name, tag, sub, sizes, stats, toggle) => `
     <div class="account-card ${cls}">
       <div class="ac-header"><div class="ac-title-row"><div class="ac-title"><span class="ac-title-icon">${icon}</span>${name}</div><span class="ac-tag ${cls}">${tag}</span></div><div class="ac-sub">${sub}</div></div>
