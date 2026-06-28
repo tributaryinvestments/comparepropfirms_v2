@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "name": "EdgeProp Trading",
+    "slug": "edgeprop-trading",
+    "url": "/prop-firm/edgeprop-trading/",
+    "pattern": "eval-only",
+    "accent": "--green",
+    "accent_note": "‹VERIFY brand accent — kept Alpha/TPT green token pending first-party EdgeProp brand color; pick from existing palette tokens only›",
+    "sizes": ["50K", "75K", "100K", "150K", "200K"],
+    "sizes_note": "5 sizes $50K–$200K confirmed first-party (eval article + homepage, captured 2026-06-26/27)",
+    "products": [
+      { "slot": "growth", "label": "EdgeOne" },
+      { "slot": "select", "label": "EdgeCore" },
+      { "slot": "lightning", "label": "EdgeX" }
+    ],
+    "products_note": "EdgeProp sells THREE one-step eval programs (help center PA & Live Funding). Same eval price/targets/contracts; differ by funded drawdown type + consistency: EdgeOne=EOD trailing+40% consistency, EdgeCore=intraday trailing+40% consistency, EdgeX=EOD trailing+no consistency. All three are EVALUATIONS (none is instant) — page lightning slot must render as eval, not no-eval.",
+    "platforms": ["Bookmap", "ATAS", "Jigsaw daytradr", "Quantower", "NinjaTrader", "tradesea", "WealthCharts"],
+    "platforms_note": "Free licenses via Rithmic connectivity (Bookmap, ATAS, Jigsaw daytradr, Quantower, NinjaTrader, tradesea); WealthCharts listed as available (homepage, captured 2026-06-27)",
+    "instruments": "Futures",
+    "instruments_note": "Futures only — no forex, CFDs, stocks, options, or crypto (eval rules article)",
+    "promo": "BOOKMAP60 — 60% off the evaluation (valid until Jun 28, 2026 ‹VERIFY current›). Promo monthly fees: $60 (50K), $72 (75K), $100 (100K), $140 (150K), $180 (200K)",
+    "trustpilot": { "score": "4.1", "reviews": 14, "url": "https://www.trustpilot.com/review/edgeproptrading.com", "captured": "2026-06-27", "distribution_note": "Per-star breakdown ‹VERIFY› — Trustpilot bot protection blocks automated capture; aggregate 4.1/5 from 14 reviews confirmed via search of trustpilot.com/review/edgeproptrading.com" },
+    "source": { "wp": "/prop-firm/edgeprop-trading/", "firstParty": "edgeproptrading.com (homepage + /about + /terms + /restricted-countries) + help.edgeproptrading.com articles (evaluation-accounts-rules-and-parameters, pa-live-funding-clarifications-and-rules, payout-frequency-limits, first-5-payouts-safety-net-rules, consistency-rule-40-max-daily-profit, economic-news-trading-restrictions, profit-split-model, how-funding-can-be-suspended-or-revoked)", "pulled": "2026-06-27" }
+  },
+
+  "account_data": {
+    "growth": {
+      "eval": {
+        "fixed": {
+          "evalSteps": "1 Step",
+          "consistency": "None",
+          "daysToPass": "7 trading days",
+          "maxAccounts": "Up to 5",
+          "resets": "$80",
+          "news": "Flat 5 min before → 2 min after high-impact news (instant fail on eval)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "target": "$3,000",  "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "10 (100 micros)" },
+          "75K":  { "target": "$4,500",  "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None", "maxContracts": "12 (120 micros)" },
+          "100K": { "target": "$6,000",  "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "15 (150 micros)" },
+          "150K": { "target": "$9,000",  "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "20 (200 micros)" },
+          "200K": { "target": "$12,000", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None", "maxContracts": "25 (250 micros)" }
+        }
+      },
+      "funded": {
+        "fixed": {
+          "target": "No Target",
+          "daysToPayout": "5 profitable days (≥ $200 each)",
+          "consistency": "40% max daily profit (at payout)",
+          "scaling": "Safety-net ½ → full at Start + Trailing + $100",
+          "maxAccounts": "Up to 5",
+          "resets": "Activation $120 (one-time)",
+          "split": "100% → 90% (after $5K)",
+          "news": "Flat 5 min before → 2 min after high-impact news (audit/suspension/payout denial)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None" },
+          "75K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None" },
+          "100K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None" },
+          "150K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None" },
+          "200K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None" }
+        }
+      }
+    },
+    "select": {
+      "eval": {
+        "fixed": {
+          "evalSteps": "1 Step",
+          "consistency": "None",
+          "daysToPass": "7 trading days",
+          "maxAccounts": "Up to 5",
+          "resets": "$80",
+          "news": "Flat 5 min before → 2 min after high-impact news (instant fail on eval)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "target": "$3,000",  "drawdown": "$2,500 Intraday Trailing", "dailyLoss": "None", "maxContracts": "10 (100 micros)" },
+          "75K":  { "target": "$4,500",  "drawdown": "$3,000 Intraday Trailing", "dailyLoss": "None", "maxContracts": "12 (120 micros)" },
+          "100K": { "target": "$6,000",  "drawdown": "$3,500 Intraday Trailing", "dailyLoss": "None", "maxContracts": "15 (150 micros)" },
+          "150K": { "target": "$9,000",  "drawdown": "$4,500 Intraday Trailing", "dailyLoss": "None", "maxContracts": "20 (200 micros)" },
+          "200K": { "target": "$12,000", "drawdown": "$6,000 Intraday Trailing", "dailyLoss": "None", "maxContracts": "25 (250 micros)" }
+        }
+      },
+      "funded": {
+        "fixed": {
+          "target": "No Target",
+          "daysToPayout": "5 profitable days (≥ $200 each)",
+          "consistency": "40% max daily profit (at payout)",
+          "scaling": "Safety-net ½ → full at Start + Trailing + $100",
+          "maxAccounts": "Up to 5",
+          "resets": "Activation $120 (one-time)",
+          "split": "100% → 90% (after $5K)",
+          "news": "Flat 5 min before → 2 min after high-impact news (audit/suspension/payout denial)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$2,500 Intraday Trailing", "dailyLoss": "None" },
+          "75K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,000 Intraday Trailing", "dailyLoss": "None" },
+          "100K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,500 Intraday Trailing", "dailyLoss": "None" },
+          "150K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$4,500 Intraday Trailing", "dailyLoss": "None" },
+          "200K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$6,000 Intraday Trailing", "dailyLoss": "None" }
+        }
+      }
+    },
+    "lightning": {
+      "eval": {
+        "fixed": {
+          "evalSteps": "1 Step",
+          "consistency": "None",
+          "daysToPass": "7 trading days",
+          "maxAccounts": "Up to 5",
+          "resets": "$80",
+          "news": "Flat 5 min before → 2 min after high-impact news (instant fail on eval)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "target": "$3,000",  "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "10 (100 micros)" },
+          "75K":  { "target": "$4,500",  "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None", "maxContracts": "12 (120 micros)" },
+          "100K": { "target": "$6,000",  "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "15 (150 micros)" },
+          "150K": { "target": "$9,000",  "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None", "maxContracts": "20 (200 micros)" },
+          "200K": { "target": "$12,000", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None", "maxContracts": "25 (250 micros)" }
+        }
+      },
+      "funded": {
+        "fixed": {
+          "target": "No Target",
+          "daysToPayout": "5 profitable days (≥ $200 each)",
+          "consistency": "None",
+          "scaling": "Safety-net ½ → full at Start + Trailing + $100",
+          "maxAccounts": "Up to 5",
+          "resets": "Activation $120 (one-time)",
+          "split": "100% → 90% (after $5K)",
+          "news": "Flat 5 min before → 2 min after high-impact news (audit/suspension/payout denial)",
+          "bots": "Automation allowed if risk rules respected; own-account copy trading allowed"
+        },
+        "sizes": {
+          "50K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None" },
+          "75K":  { "maxPayout": "$2,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None" },
+          "100K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None" },
+          "150K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None" },
+          "200K": { "maxPayout": "$3,500 (payouts 1–5) → $5,000 (6+)", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None" }
+        }
+      }
+    }
+  },
+
+  "payout_data": {
+    "growth": {
+      "fixed": {
+        "minPayout": "$500",
+        "target": "No Target",
+        "buffer": "Safety Net = Start + Trailing + $100",
+        "days": "5 profitable days (≥ $200 each)",
+        "perDay": "≥ $200 profit/day",
+        "consistency": "40% max daily profit (at payout)",
+        "split": "100% → 90% (after $5K)"
+      },
+      "sizes": {
+        "50K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $52,600",  "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None" },
+        "75K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $78,100",  "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None" },
+        "100K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $103,600", "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None" },
+        "150K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $154,600", "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None" },
+        "200K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $206,100", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None" }
+      }
+    },
+    "select": {
+      "fixed": {
+        "minPayout": "$500",
+        "target": "No Target",
+        "buffer": "Safety Net = Start + Trailing + $100",
+        "days": "5 profitable days (≥ $200 each)",
+        "perDay": "≥ $200 profit/day",
+        "consistency": "40% max daily profit (at payout)",
+        "split": "100% → 90% (after $5K)"
+      },
+      "sizes": {
+        "50K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $52,600",  "drawdown": "$2,500 Intraday Trailing", "dailyLoss": "None" },
+        "75K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $78,100",  "drawdown": "$3,000 Intraday Trailing", "dailyLoss": "None" },
+        "100K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $103,600", "drawdown": "$3,500 Intraday Trailing", "dailyLoss": "None" },
+        "150K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $154,600", "drawdown": "$4,500 Intraday Trailing", "dailyLoss": "None" },
+        "200K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $206,100", "drawdown": "$6,000 Intraday Trailing", "dailyLoss": "None" }
+      }
+    },
+    "lightning": {
+      "fixed": {
+        "minPayout": "$500",
+        "target": "No Target",
+        "buffer": "Safety Net = Start + Trailing + $100",
+        "days": "5 profitable days (≥ $200 each)",
+        "perDay": "≥ $200 profit/day",
+        "consistency": "None",
+        "split": "100% → 90% (after $5K)"
+      },
+      "sizes": {
+        "50K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $52,600",  "drawdown": "$2,500 EOD Trailing", "dailyLoss": "None" },
+        "75K":  { "maxPayout": "$2,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $78,100",  "drawdown": "$3,000 EOD Trailing", "dailyLoss": "None" },
+        "100K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $103,600", "drawdown": "$3,500 EOD Trailing", "dailyLoss": "None" },
+        "150K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $154,600", "drawdown": "$4,500 EOD Trailing", "dailyLoss": "None" },
+        "200K": { "maxPayout": "$3,500", "maxPayoutSub": "Payouts 1–5; $5,000 from #6 · weekly · Safety Net $206,100", "drawdown": "$6,000 EOD Trailing", "dailyLoss": "None" }
+      }
+    }
+  },
+
+  "card_data": {
+    "growth": {
+      "icon": "📈",
+      "name": "EdgeOne",
+      "tag": "EOD Trailing · 40% Consistency",
+      "tagClass": "growth",
+      "sub": "One-step futures eval • 5 sizes ($50K–$200K) • end-of-day trailing drawdown • no daily loss limit • 40% max-daily-profit consistency on funded payouts",
+      "split": "100% → 90%",
+      "splitFull": "100% to trader up to $5,000, then 90% / 10%",
+      "targetSub": "Single step",
+      "payoutsTop": "Weekly",
+      "minDays": "7 trading days",
+      "evalMinDays": "7 trading days",
+      "fundedMinDays": "5 profitable days (≥ $200 each)",
+      "consistencyEval": "None",
+      "consistencyFunded": "40% max daily profit",
+      "instruments": "Futures",
+      "firstPayout": "5 profitable days (≥ $200 each)",
+      "subsequent": "$500 min · max $2,500 (payouts 1–5), $5,000 (6+)",
+      "frequency": "Weekly",
+      "accountReset": "$80 (eval)",
+      "about": "EdgeOne is EdgeProp's end-of-day-trailing one-step evaluation. The drawdown is measured on closing balances rather than intraday highs, which suits controlled, swing-style traders who don't want an open-trade high pulling their threshold up against them. Pass the single profit target over a minimum of 7 trading days, then trade a simulated funded account on Rithmic live data with a 100% split up to $5,000 (then 90/10) and weekly withdrawals. Funded payouts require 5 profitable days of at least $200 each and must satisfy a 40% max-daily-profit consistency rule at the time of request. A one-time $120 activation fee applies on the funded account.",
+      "features": ["End-of-day trailing drawdown (forgiving intraday)", "No daily loss limit", "100% split up to $5,000, then 90/10", "Free platform licenses (Bookmap, ATAS, NinjaTrader, Quantower +more)", "Five sizes up to $200K · up to 5 funded accounts"],
+      "bestFor": ["Swing/position futures traders who want EOD drawdown", "Traders comfortable balancing daily profits for the 40% rule"],
+      "notIdeal": ["Traders who want zero consistency rule (see EdgeX)", "Traders in one of the ~85 restricted countries"],
+      "ctaText": "Pass the one-step EdgeOne evaluation to reach a funded <strong>EdgeProp account</strong> — 100% of profits up to $5,000, then 90/10, with weekly withdrawals. A one-time <strong>$120</strong> activation fee applies on the funded account.",
+      "sizes": {
+        "50K":  { "fee": "$150 /mo", "promoFee": "$60 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$3,000",  "dll": "None", "maxloss": "$2,500 EOD Trailing",  "maxlossShort": "$2,500",  "contracts": "10 contracts (100 micros)" },
+        "75K":  { "fee": "$180 /mo", "promoFee": "$72 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$4,500",  "dll": "None", "maxloss": "$3,000 EOD Trailing",  "maxlossShort": "$3,000",  "contracts": "12 contracts (120 micros)" },
+        "100K": { "fee": "$250 /mo", "promoFee": "$100 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$6,000",  "dll": "None", "maxloss": "$3,500 EOD Trailing",  "maxlossShort": "$3,500",  "contracts": "15 contracts (150 micros)" },
+        "150K": { "fee": "$350 /mo", "promoFee": "$140 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$9,000",  "dll": "None", "maxloss": "$4,500 EOD Trailing",  "maxlossShort": "$4,500",  "contracts": "20 contracts (200 micros)" },
+        "200K": { "fee": "$450 /mo", "promoFee": "$180 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$12,000", "dll": "None", "maxloss": "$6,000 EOD Trailing",  "maxlossShort": "$6,000",  "contracts": "25 contracts (250 micros)" }
+      }
+    },
+    "select": {
+      "icon": "⚡",
+      "name": "EdgeCore",
+      "tag": "Intraday Trailing · 40% Consistency",
+      "tagClass": "select",
+      "sub": "One-step futures eval • 5 sizes ($50K–$200K) • real-time intraday trailing drawdown • no daily loss limit • 40% max-daily-profit consistency on funded payouts",
+      "split": "100% → 90%",
+      "splitFull": "100% to trader up to $5,000, then 90% / 10%",
+      "targetSub": "Single step",
+      "payoutsTop": "Weekly",
+      "minDays": "7 trading days",
+      "evalMinDays": "7 trading days",
+      "fundedMinDays": "5 profitable days (≥ $200 each)",
+      "consistencyEval": "None",
+      "consistencyFunded": "40% max daily profit",
+      "instruments": "Futures",
+      "firstPayout": "5 profitable days (≥ $200 each)",
+      "subsequent": "$500 min · max $2,500 (payouts 1–5), $5,000 (6+)",
+      "frequency": "Weekly",
+      "accountReset": "$80 (eval)",
+      "about": "EdgeCore is EdgeProp's real-time intraday-trailing one-step evaluation, built for scalpers and active intraday traders. The drawdown tightens in real time as your balance rises, so open-trade highs pull your threshold up against you — the trade-off for trading the same one-step structure as EdgeOne. Pass the single profit target over a minimum of 7 trading days, then trade a simulated funded account on Rithmic live data with a 100% split up to $5,000 (then 90/10) and weekly withdrawals. Funded payouts require 5 profitable days of at least $200 each and a 40% max-daily-profit consistency rule at the time of request. A one-time $120 activation fee applies on the funded account.",
+      "features": ["Real-time intraday trailing drawdown", "No daily loss limit", "100% split up to $5,000, then 90/10", "Free platform licenses (Bookmap, ATAS, NinjaTrader, Quantower +more)", "Five sizes up to $200K · up to 5 funded accounts"],
+      "bestFor": ["Scalpers and active intraday futures traders", "Traders who can manage a real-time trailing threshold"],
+      "notIdeal": ["Traders who cannot manage an intraday trailing drawdown", "Traders who want zero consistency rule (see EdgeX)"],
+      "ctaText": "Pass the one-step EdgeCore evaluation to reach a funded <strong>EdgeProp account</strong> — 100% of profits up to $5,000, then 90/10, with weekly withdrawals. A one-time <strong>$120</strong> activation fee applies on the funded account.",
+      "sizes": {
+        "50K":  { "fee": "$150 /mo", "promoFee": "$60 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$3,000",  "dll": "None", "maxloss": "$2,500 Intraday Trailing",  "maxlossShort": "$2,500",  "contracts": "10 contracts (100 micros)" },
+        "75K":  { "fee": "$180 /mo", "promoFee": "$72 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$4,500",  "dll": "None", "maxloss": "$3,000 Intraday Trailing",  "maxlossShort": "$3,000",  "contracts": "12 contracts (120 micros)" },
+        "100K": { "fee": "$250 /mo", "promoFee": "$100 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$6,000",  "dll": "None", "maxloss": "$3,500 Intraday Trailing",  "maxlossShort": "$3,500",  "contracts": "15 contracts (150 micros)" },
+        "150K": { "fee": "$350 /mo", "promoFee": "$140 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$9,000",  "dll": "None", "maxloss": "$4,500 Intraday Trailing",  "maxlossShort": "$4,500",  "contracts": "20 contracts (200 micros)" },
+        "200K": { "fee": "$450 /mo", "promoFee": "$180 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$12,000", "dll": "None", "maxloss": "$6,000 Intraday Trailing",  "maxlossShort": "$6,000",  "contracts": "25 contracts (250 micros)" }
+      }
+    },
+    "lightning": {
+      "icon": "🅧",
+      "name": "EdgeX",
+      "tag": "EOD Trailing · No Consistency",
+      "tagClass": "lightning",
+      "sub": "One-step futures eval • 5 sizes ($50K–$200K) • end-of-day trailing drawdown • no daily loss limit • no consistency rule (only 5 profitable days for payout)",
+      "split": "100% → 90%",
+      "splitFull": "100% to trader up to $5,000, then 90% / 10%",
+      "targetSub": "Single step",
+      "payoutsTop": "Weekly",
+      "minDays": "7 trading days",
+      "evalMinDays": "7 trading days",
+      "fundedMinDays": "5 profitable days (≥ $200 each)",
+      "consistencyEval": "None",
+      "consistencyFunded": "None",
+      "instruments": "Futures",
+      "firstPayout": "5 profitable days (≥ $200 each)",
+      "subsequent": "$500 min · max $2,500 (payouts 1–5), $5,000 (6+)",
+      "frequency": "Weekly",
+      "accountReset": "$80 (eval)",
+      "about": "EdgeX is EdgeProp's most permissive one-step evaluation: end-of-day trailing drawdown and no consistency rule at all. Funded payouts only require 5 profitable days of at least $200 each — there is no 40% max-daily-profit cap, so a single strong day won't hold up your withdrawal. Pass the single profit target over a minimum of 7 trading days, then trade a simulated funded account on Rithmic live data with a 100% split up to $5,000 (then 90/10) and weekly withdrawals. A one-time $120 activation fee applies on the funded account.",
+      "features": ["No consistency rule on payouts", "End-of-day trailing drawdown", "No daily loss limit", "100% split up to $5,000, then 90/10", "Free platform licenses · five sizes up to $200K"],
+      "bestFor": ["Traders who want no consistency rule of any kind", "Traders who prefer EOD trailing and simple payout rules"],
+      "notIdeal": ["Traders who want real-time intraday drawdown (see EdgeCore)", "Traders in one of the ~85 restricted countries"],
+      "ctaText": "Pass the one-step EdgeX evaluation to reach a funded <strong>EdgeProp account</strong> — 100% of profits up to $5,000, then 90/10, with weekly withdrawals and no consistency rule. A one-time <strong>$120</strong> activation fee applies on the funded account.",
+      "sizes": {
+        "50K":  { "fee": "$150 /mo", "promoFee": "$60 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$3,000",  "dll": "None", "maxloss": "$2,500 EOD Trailing",  "maxlossShort": "$2,500",  "contracts": "10 contracts (100 micros)" },
+        "75K":  { "fee": "$180 /mo", "promoFee": "$72 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$4,500",  "dll": "None", "maxloss": "$3,000 EOD Trailing",  "maxlossShort": "$3,000",  "contracts": "12 contracts (120 micros)" },
+        "100K": { "fee": "$250 /mo", "promoFee": "$100 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$6,000",  "dll": "None", "maxloss": "$3,500 EOD Trailing",  "maxlossShort": "$3,500",  "contracts": "15 contracts (150 micros)" },
+        "150K": { "fee": "$350 /mo", "promoFee": "$140 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$9,000",  "dll": "None", "maxloss": "$4,500 EOD Trailing",  "maxlossShort": "$4,500",  "contracts": "20 contracts (200 micros)" },
+        "200K": { "fee": "$450 /mo", "promoFee": "$180 /mo (BOOKMAP60, 60% off)", "activation": "$120 (funded, one-time)", "target": "$12,000", "dll": "None", "maxloss": "$6,000 EOD Trailing",  "maxlossShort": "$6,000",  "contracts": "25 contracts (250 micros)" }
+      }
+    }
+  },
+
+  "phase_labels": {
+    "eval":   { "consistency": "Consistency (Eval)" },
+    "funded": { "consistency": "Consistency (Funded)" }
+  },
+
+  "tab_content": {
+    "rules": "EdgeProp runs three one-step evaluation programs that share the same price, profit targets, contracts and 7-trading-day minimum, and differ only in funded drawdown style and consistency: <strong>EdgeOne</strong> (end-of-day trailing, 40% max-daily-profit consistency), <strong>EdgeCore</strong> (real-time intraday trailing, 40% consistency) and <strong>EdgeX</strong> (end-of-day trailing, no consistency). There is no daily loss limit on any program. Futures only — no forex, CFDs, stocks, options or crypto. High-impact news: flatten at least 5 minutes before and don't trade until 2 minutes after the release (instant fail on eval; audit, suspension or payout denial when funded). Automation is allowed if risk rules are respected, and copy trading between your own accounts is allowed. Funded accounts are simulated on Rithmic live data with a 100% split up to $5,000 (then 90/10), weekly withdrawals and a one-time $120 activation fee. Per-trade risk is capped at 30% of your profit cushion (rising to 50% after the account grows).",
+    "scaling": "Contract scaling is safety-net based: accounts trade half-contract allocation until the balance reaches the Safety Net, then full allocation unlocks. Safety Net = Starting Balance + Trailing Drawdown + $100 — i.e. $52,600 (50K), $78,100 (75K), $103,600 (100K), $154,600 (150K) and $206,100 (200K). For the first five payouts a max of $2,500 per payout applies and the Safety Net must always be respected; from the sixth payout the per-request cap rises to $5,000.",
+    "faq": [
+      { "q": "What's the difference between EdgeOne, EdgeCore and EdgeX?", "a": "All three are one-step evaluations with identical pricing, targets and contracts. EdgeOne uses end-of-day trailing drawdown with a 40% max-daily-profit consistency rule; EdgeCore uses real-time intraday trailing drawdown with the same 40% rule; EdgeX uses end-of-day trailing drawdown with no consistency rule (only 5 profitable days are needed for payouts)." },
+      { "q": "How do payouts work?", "a": "You need 5 profitable trading days of at least $200 each since funding or your last payout. The minimum payout is $500. For the first five payouts the cap is $2,500 (50K–75K) or $3,500 (100K–200K) per request; from the sixth payout the cap rises to $5,000. Withdrawals are weekly and the Safety Net must always be respected." },
+      { "q": "Is there a consistency rule?", "a": "On EdgeOne and EdgeCore, at the time of a payout request your largest single-day net profit must not exceed 40% of your total net profit since funding. It only affects payout eligibility, not your ability to keep trading. EdgeX has no consistency rule." },
+      { "q": "Can I trade the news or use bots?", "a": "You must flatten at least 5 minutes before a high-impact news release and wait until 2 minutes after to resume. Automation is allowed if risk rules are respected, and copy trading between your own accounts is allowed." }
+    ],
+    "restricted": ["Afghanistan","Algeria","Azerbaijan","Bahrain","Bangladesh","Belarus","Benin","Brunei","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","China","Côte d'Ivoire","Cuba","Cyprus","Egypt","Eritrea","Gabon","Ghana","Grenada","Guinea","Guinea-Bissau","Haiti","Iran","Iraq","Jersey","Jordan","Kazakhstan","Kenya","Kosovo","Kuwait","Kyrgyzstan","Latvia","Lebanon","Lesotho","Liberia","Libya","Madagascar","Maldives","Mauritania","Mauritius","Moldova","Mongolia","Morocco","Mozambique","Namibia","Nepal","New Caledonia","Nicaragua","Niger","Nigeria","North Korea","Oman","Pakistan","Palestine (State of)","Papua New Guinea","Qatar","Republic of the Congo","Russia","Rwanda","Saint Pierre and Miquelon","Saudi Arabia","Senegal","Serbia","Somalia","South Sudan","Sri Lanka","Sudan","Syria","Tanzania","Togo","Trinidad and Tobago","Tunisia","Türkiye (Turkey)","Uganda","Uzbekistan","Vanuatu","Venezuela","Vietnam","Western Sahara","Yemen","Zambia","Zimbabwe"]
+  }
+}

@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  CORNERSTONE — fork this file, swap ONLY the data. Four components are LOCKED
+  (violated on the EdgeProp build 2026-06-27; see vault 07 Blueprint §Locked):
+
+  1. HERO CHEVRON LABELS NEVER CHANGE. The three .chev-label texts are always,
+     in order: "True Funding Fee" / "Profit Split" / "Limited Time Offer".
+     Slot 1 .chev-value = <span class="chev-orig">$ORIG</span>$DISCOUNTED
+     (struck $50K-eval price + discounted). Slot 3 = meta "Save up to" + value
+     "X%" (this firm's promo discount). Only icon/value/meta change per firm.
+  2. CARD-VIEW ROWS: .cd-block-row label LEFT, value RIGHT and wrapping
+     (justify-content:space-between; .value flex-wrap:wrap; text-align:right;
+     min-width:0) — never let a value jam against its label.
+  3. PLATFORM ICONS: reuse the logo any other firm page already renders
+     (.platform-logo.<name> + --logo-<name>, inline base64 <img>, or text
+     ::after chip). Leave blank ONLY for a platform on no existing page.
+  4. REVIEWS: capture real Trustpilot data (trustpilot.com/review/<domain>) into
+     the hero rating, .reviews-big-score/.count, and .trustpilot-block. Never
+     bypass Trustpilot's bot-challenge; leave per-star bars ‹VERIFY› if blocked.
+  ============================================================================
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1761,14 +1782,15 @@
     border-bottom: 1px solid var(--border);
   }
   .cd-block-row {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
     padding: 6px 0;
     font-size: 12px;
   }
-  .cd-block-row .label { color: var(--gray-500); }
+  .cd-block-row .label { color: var(--gray-500); flex-shrink: 0; text-align: left; }
   .cd-block-row .value {
     font-weight: 700;
-    display: flex; align-items: center; gap: 4px;
+    display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end;
+    text-align: right; gap: 4px; min-width: 0;
   }
   .check-icon {
     width: 12px; height: 12px; border-radius: 50%;
@@ -3106,9 +3128,9 @@
     <div class="hero-stats">
       <div class="chev green">
         <div class="chev-icon">🏷</div>
-        <div class="chev-value">$79</div>
+        <div class="chev-value"><span class="chev-orig">$79</span>$59</div>
         <div class="chev-meta">Zero 25K / mo</div>
-        <div class="chev-label">Lowest Monthly</div>
+        <div class="chev-label">True Funding Fee</div>
       </div>
       <div class="chev gray">
         <div class="chev-icon">📊</div>
@@ -3118,9 +3140,9 @@
       </div>
       <div class="chev orange">
         <div class="chev-icon">🔥</div>
+        <div class="chev-meta">Save up to</div>
         <div class="chev-value">25%</div>
-        <div class="chev-meta">All Accounts</div>
-        <div class="chev-label">Eval Promo</div>
+        <div class="chev-label">Limited Time Offer</div>
       </div>
     </div>
 
