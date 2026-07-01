@@ -8,7 +8,7 @@
       "logo": "tradeify", "grad": "linear-gradient(135deg,#2eb87a,#1e8757)", "ribbon": "Instant Funding", "award": "Editor's Choice",
       "rating": 5.0, "tagline": "Most trustworthy with fast payouts",
       "chev": { "price": {"value":"$94","orig":"$145","meta":"$50K Eval","label":"True Funding Fee"}, "split": {"value":"90%","meta":"To Trader","label":"Profit Split"}, "save": {"value":"35%","meta":"Save up to","label":"Limited Time Offer"} },
-      "promo": "June Sale Ends 6/30/26 · Code: CPF", "tags": ["eval","instant","fiveplus","news"], "sortPrice": 94, "sortSave": 35, "platforms": 13, "_verify": [] },
+      "promo": "July Sale Ends 7/31/26 · Code: CPF", "tags": ["eval","instant","fiveplus","news"], "sortPrice": 94, "sortSave": 35, "platforms": 13, "_verify": [] },
 
     { "rank": 2, "id": "lucid", "name": "Lucid Trading", "slug": "lucid-trading", "link": "/prop-firm/lucid-trading/",
       "logo": "LUCID", "grad": "linear-gradient(135deg,#1f2937,#0b1220)", "ribbon": "Instant Funding", "award": null,
@@ -20,7 +20,7 @@
       "logo": "Purdia", "grad": "linear-gradient(135deg,#2554c7,#1d3f99)", "ribbon": "Instant Funding", "award": null,
       "rating": 4.9, "tagline": "Fast track to live with zero payout denials",
       "chev": { "price": {"value":"$349","meta":"$50K Instant","label":"True Funding Fee"}, "split": {"value":"90%","meta":"To Trader","label":"Profit Split"}, "save": {"value":"36%","meta":"Save up to","label":"Limited Time Offer"} },
-      "promo": "June Sale Ends 6/30/26 · Code: CORE200", "tags": ["eval","instant","news"], "sortPrice": 349, "sortSave": 36, "platforms": 7, "_verify": [] },
+      "promo": "July Sale Ends 7/31/26 · Code: CORE200", "tags": ["eval","instant","news"], "sortPrice": 349, "sortSave": 36, "platforms": 7, "_verify": [] },
 
     { "rank": 4, "id": "alpha", "name": "Alpha Futures", "slug": "alpha-futures", "link": "/prop-firm/alpha-futures/",
       "logo": "ALPHA", "grad": "linear-gradient(135deg,#0f766e,#0b4f49)", "ribbon": "One-Step Eval", "award": null,

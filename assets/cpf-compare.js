@@ -11,7 +11,7 @@ const FIRMS = [
       split: { value:"90%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"35%", meta:"Save up to", label:"Limited Time Offer" }
     },
-    promo: "June Sale Ends 6/30/26 · Use Promo Code: <span class='promo-code-pill'>CPF</span>",
+    promo: "July Sale Ends 7/31/26 · Use Promo Code: <span class='promo-code-pill'>CPF</span>",
     tags: ["eval","instant","fiveplus","news"],
     sortPrice: 94, sortSave: 35,
     quickFacts: [
@@ -106,7 +106,7 @@ const FIRMS = [
       split: { value:"90%", meta:"To Trader", label:"Profit Split" },
       save:  { value:"36%", meta:"Save up to", label:"Limited Time Offer" }
     },
-    promo: "June Sale Ends 6/30/26 · Use Promo Code: <span class='promo-code-pill'>CORE200</span>",
+    promo: "July Sale Ends 7/31/26 · Use Promo Code: <span class='promo-code-pill'>CORE200</span>",
     tags: ["eval","instant","news"],
     sortPrice: 349, sortSave: 36,
     quickFacts: [
@@ -305,9 +305,9 @@ const FIRMS = [
     chev: {
       price: { value:"$40", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80% \u2192 90%", meta:"Up to 90%", label:"Profit Split" },
-      save:  { value:"75%", meta:"Save up to", label:"BOGO June Sale" }
+      save:  { value:"75%", meta:"Save up to", label:"BOGO July Sale" }
     },
-    promo: "June Sale \u2014 50% Off + Buy-One-Get-One \u00b7 Code: <span class='promo-code-pill'>BOGOISBACK</span> (ends 6/30/26)",
+    promo: "July Sale \u2014 50% Off + Buy-One-Get-One \u00b7 Code: <span class='promo-code-pill'>BOGOISBACK</span> (ends 7/31/26)",
     tags: ["eval"], sortPrice: 40, sortSave: 75,
     quickFacts: [
       { label:"Products", value:"Standard + Express", sub:"OG / MAX styles" },
@@ -361,9 +361,9 @@ const FIRMS = [
     chev: {
       price: { value:"$119", meta:"$50K Eval", label:"True Funding Fee" },
       split: { value:"80\u201390%", meta:"PRO \u2192 PRO+", label:"Profit Split" },
-      save:  { value:"35%", meta:"Save up to", label:"June Sale" }
+      save:  { value:"35%", meta:"Save up to", label:"July Sale" }
     },
-    promo: "June Sale Ends 6/30/26 \u00b7 Code: <span class='promo-code-pill'>NOFEE30</span>",
+    promo: "July Sale Ends 7/31/26 \u00b7 Code: <span class='promo-code-pill'>NOFEE30</span>",
     tags: ["eval"], sortPrice: 119, sortSave: 35,
     quickFacts: [
       { label:"Product", value:"Single", sub:"Test \u2192 PRO \u2192 PRO+" },
